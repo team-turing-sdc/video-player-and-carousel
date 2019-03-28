@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/associatedVideos', (req, res) => {
-  let id = req.query.movieID.toString();
+  let id = req.query.movieID;
 
   db.getMovieData(id, (err, results) => {
     if (err) {
