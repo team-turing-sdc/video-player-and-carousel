@@ -1,5 +1,8 @@
 import React from 'react';
 
+import VideoPlayer from './VideoPlayer.jsx';
+import Carousel from './Carousel.jsx';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -8,7 +11,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <p>App placeholder text.</p>
+        <h2>APP</h2>
+        <VideoPlayer />
+        <Carousel />
       </div>
     )
   }
