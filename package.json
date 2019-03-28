@@ -8,7 +8,7 @@
   },
   "scripts": {
     "server-dev": "nodemon server/index.js",
-    "seed-db": "mongoimport --db fandangit --collection movies --drop --file MOCK_DATA.json --jsonArray"
+    "seed-db": "mongoimport --db fandangit --collection movies --drop --file mock_movie_data.json --jsonArray"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
