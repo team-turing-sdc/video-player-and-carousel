@@ -7,7 +7,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "seed-db":"mongoimport --db fandangit --collection movies --file MOCK_DATA.json --jsonArray"
+    "seed-db":"mongoimport --db fandangit --collection movies --drop --file MOCK_DATA.json --jsonArray"
   },
   "dependencies": {},
   "devDependencies": {
