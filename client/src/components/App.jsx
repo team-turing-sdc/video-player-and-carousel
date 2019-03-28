@@ -8,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <p>React is rendering successfully.</p>
+        <p>App placeholder text.</p>
       </div>
     )
   }
