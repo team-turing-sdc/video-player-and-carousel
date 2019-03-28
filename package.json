@@ -6,7 +6,9 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
+  "scripts": {
+    "seed-db":"mongoimport --db fandangit --collection movies --file MOCK_DATA.json --jsonArray"
+  },
   "dependencies": {},
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git"
