@@ -1,13 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
+
+//======= STYLES =======//
+const VideoTitle = styled.p`
+  text-transform: uppercase;
+  font-family: Helvetica;
+`
 
 class VideoPlayer extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
+    //"https://www.youtube.com/watch?v=UMaAF2WTK1A" --> "https://www.youtube.com/embed/UMaAF2WTK1A"
+    let youtubeURL = "https://www.youtube.com/embed/";
+    let vidID = this.props.video.url.split('=')[1];
+
     return (
-      <p>Video player placeholder text.</p>
+      <div className="videoPlayer">
+      <iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameBorder="0">
+      </iframe>
+      <VideoTitle>{this.props.movieTitle}: {this.props.video.title}</VideoTitle>
+      </div>
     )
   }
 }

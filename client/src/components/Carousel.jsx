@@ -1,24 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import CarouselItem from './CarouselItem.jsx';
 
-class Carousel extends React.Component {
-  constructor() {
-    super();
+//======= STYLES =======//
+const ItemContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+`
 
-    this.state = {
-      videos: [1, 2, 3, 4, 5]
-    }
+//======= COMPONENT =======//
+
+class Carousel extends React.Component {
+  constructor(props) {
+    super(props);
+
   }
 
   render() {
     return(
-      <div>
-       <p>Carousel placeholder text.</p>
-       {this.state.videos.map((vid) => {
-         return (<CarouselItem vid={vid}/>)
+      <ItemContainer>
+       {this.props.videos.map((vid) => {
+         return (<CarouselItem video={vid}/>)
        })}
-      </div>
+      </ItemContainer>
     )
   }
 }
