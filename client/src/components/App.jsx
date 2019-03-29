@@ -17,6 +17,25 @@ class App extends React.Component {
     }
   }
 
+  getAssocVideos(id) {
+    return fetch(`http://localhost:3333/associatedVideos?movieID=${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type":"application/json"
+      }
+    })
+    .then((response) => {
+      response.json();
+    })
+    .then((videoData) => {
+      this.setState({
+        movieTitle: videoData.name,
+        videos: videoData.associatedVideos,
+        playerVideo: videoData.associatedVideos[0]
+      })
+    })
+  }
+
   render() {
     return (
       <div>
