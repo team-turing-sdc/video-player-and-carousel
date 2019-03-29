@@ -7,7 +7,8 @@ class VideoPlayer extends React.Component {
 
   render() {
     return (
-      <p>Current video url: {this.props.video.url}</p>
+      <iframe width="420" height="315" src={this.props.video.url}>
+      </iframe>
     )
   }
 }
