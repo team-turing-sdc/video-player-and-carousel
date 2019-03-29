@@ -7,8 +7,8 @@ import sampleData from '../sampleData.js';
 
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       movieTitle: sampleData.name,
@@ -25,15 +25,20 @@ class App extends React.Component {
       }
     })
     .then((response) => {
-      response.json();
+      return response.json();
     })
-    .then((videoData) => {
+    .then((data) => {
+      let videoData = data[0];
       this.setState({
         movieTitle: videoData.name,
         videos: videoData.associatedVideos,
         playerVideo: videoData.associatedVideos[0]
       })
     })
+  }
+
+  componentDidMount() {
+    this.getAssocVideos(this.props.movieID);
   }
 
   render() {
