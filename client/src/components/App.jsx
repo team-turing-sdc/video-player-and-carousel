@@ -9,6 +9,7 @@ class App extends React.Component {
     super();
 
     this.state = {
+      movieTitle: sampleData.name,
       videos: sampleData.associatedVideos,
       playerVideo: sampleData.associatedVideos[0]
     }
@@ -18,7 +19,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>APP</h2>
-        <VideoPlayer video={this.state.playerVideo}/>
+        <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
         <Carousel />
       </div>
     )

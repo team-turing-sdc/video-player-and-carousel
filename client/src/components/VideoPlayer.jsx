@@ -14,8 +14,12 @@ class VideoPlayer extends React.Component {
     let vidID = this.video.url.split('=')[1];
 
     return (
+      <div className="videoPlayer">
       <iframe width="420" height="315" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`}>
       </iframe>
+      <p>{this.props.movieTitle}: {this.video.title}</p>
+      </div>
+
     )
   }
 }
