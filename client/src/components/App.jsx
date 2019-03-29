@@ -7,14 +7,39 @@ import sampleData from '../sampleData.js';
 
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       movieTitle: sampleData.name,
       videos: sampleData.associatedVideos,
       playerVideo: sampleData.associatedVideos[0]
     }
+  }
+
+  getAssocVideos(id) {
+    return fetch(`http://localhost:3333/associatedVideos?movieID=${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type":"application/json",
+        "Cache-Control":"no-cache"
+      }
+    })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let videoData = data[0];
+      this.setState({
+        movieTitle: videoData.name,
+        videos: videoData.associatedVideos,
+        playerVideo: videoData.associatedVideos[0]
+      })
+    })
+  }
+
+  componentDidMount() {
+    this.getAssocVideos(this.props.movieID);
   }
 
   render() {

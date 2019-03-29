@@ -10,20 +10,18 @@ const VideoTitle = styled.p`
 class VideoPlayer extends React.Component {
   constructor(props) {
     super(props);
-
-    this.video = this.props.video;
   }
 
   render() {
     //"https://www.youtube.com/watch?v=UMaAF2WTK1A" --> "https://www.youtube.com/embed/UMaAF2WTK1A"
     let youtubeURL = "https://www.youtube.com/embed/";
-    let vidID = this.video.url.split('=')[1];
+    let vidID = this.props.video.url.split('=')[1];
 
     return (
       <div className="videoPlayer">
-      <iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameborder="0">
+      <iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameBorder="0">
       </iframe>
-      <VideoTitle>{this.props.movieTitle}: {this.video.title}</VideoTitle>
+      <VideoTitle>{this.props.movieTitle}: {this.props.video.title}</VideoTitle>
       </div>
     )
   }
