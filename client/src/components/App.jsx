@@ -1,8 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import VideoPlayer from './VideoPlayer.jsx';
 import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
+
+const HeaderTest = styled.h2`
+  color: red;
+  font-family: Papyrus;
+`
 
 class App extends React.Component {
   constructor() {
@@ -18,7 +24,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>APP</h2>
+        <HeaderTest>
+          <h2>APP</h2>
+        </HeaderTest>
         <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
         <Carousel />
       </div>
