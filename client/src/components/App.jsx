@@ -20,7 +20,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>APP</h2>
         <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
         <Carousel videos={this.state.videos}/>
       </div>
