@@ -14,10 +14,6 @@ app.use((req, res, next) => {
   next();
 })
 
-app.get('/', (req, res) => {
-  res.send('hello buddy');
-})
-
 app.get('/associatedVideos', (req, res) => {
   let id = req.query.movieID;
 
