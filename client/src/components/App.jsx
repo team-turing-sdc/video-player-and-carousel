@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import VideoPlayer from './VideoPlayer.jsx';
 import Carousel from './Carousel.jsx';
@@ -8,6 +9,7 @@ const Paragraph = styled.p`
   color: red;
   font-family: Helvetica;
   font-size: 18px;
+  `
 
 class App extends React.Component {
   constructor() {
