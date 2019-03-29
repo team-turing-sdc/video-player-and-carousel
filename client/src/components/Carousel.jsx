@@ -22,8 +22,8 @@ class Carousel extends React.Component {
   render() {
     return(
       <ItemContainer>
-       {this.props.videos.map((vid) => {
-         return (<CarouselItem video={vid}/>)
+       {this.props.videos.map((vid, idx) => {
+         return (<CarouselItem key={idx} video={vid}/>)
        })}
       </ItemContainer>
     )
