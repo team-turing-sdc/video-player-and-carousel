@@ -21,7 +21,7 @@ class VideoPlayer extends React.Component {
 
     return (
       <div className="videoPlayer">
-      <iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameborder="0">
+      <iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameBorder="0">
       </iframe>
       <VideoTitle>{this.props.movieTitle}: {this.video.title}</VideoTitle>
       </div>
