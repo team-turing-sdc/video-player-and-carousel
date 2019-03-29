@@ -21,7 +21,8 @@ class App extends React.Component {
     return fetch(`http://localhost:3333/associatedVideos?movieID=${id}`, {
       method: "GET",
       headers: {
-        "Content-Type":"application/json"
+        "Content-Type":"application/json",
+        "Cache-Control":"no-cache"
       }
     })
     .then((response) => {
