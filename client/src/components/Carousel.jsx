@@ -14,7 +14,6 @@ class Carousel extends React.Component {
   render() {
     return(
       <div>
-       <p>Carousel placeholder text.</p>
        {this.state.videos.map((vid) => {
          return (<CarouselItem vid={vid}/>)
        })}
