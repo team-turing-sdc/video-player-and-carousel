@@ -5,11 +5,6 @@ import VideoPlayer from './VideoPlayer.jsx';
 import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
 
-const Paragraph = styled.p`
-  color: red;
-  font-family: Helvetica;
-  font-size: 18px;
-  `
 
 class App extends React.Component {
   constructor() {
@@ -25,12 +20,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-          <h2>APP</h2>
-          <Paragraph>
-            test test test
-          </Paragraph>
+        <h2>APP</h2>
         <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
-        <Carousel />
+        <Carousel videos={this.state.videos}/>
       </div>
     )
   }

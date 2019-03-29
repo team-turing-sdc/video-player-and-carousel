@@ -3,27 +3,27 @@ import styled from 'styled-components';
 
 import CarouselItem from './CarouselItem.jsx';
 
+//======= STYLES =======//
 const ItemContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 30%;
+  width: 80%;
 `
 
-class Carousel extends React.Component {
-  constructor() {
-    super();
+//======= COMPONENT =======//
 
-    this.state = {
-      videos: [1, 2, 3, 4, 5]
-    }
+class Carousel extends React.Component {
+  constructor(props) {
+    super(props);
+
   }
 
   render() {
     return(
       <ItemContainer>
-       {this.state.videos.map((vid) => {
-         return (<CarouselItem vid={vid}/>)
+       {this.props.videos.map((vid) => {
+         return (<CarouselItem video={vid}/>)
        })}
       </ItemContainer>
     )
