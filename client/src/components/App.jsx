@@ -3,9 +3,11 @@ import React from 'react';
 import VideoPlayer from './VideoPlayer.jsx';
 import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
-import {Paragraph} from './styles/styles.jsx';
 
-
+const Paragraph = styled.p`
+  color: red;
+  font-family: Helvetica;
+  font-size: 18px;
 
 class App extends React.Component {
   constructor() {
