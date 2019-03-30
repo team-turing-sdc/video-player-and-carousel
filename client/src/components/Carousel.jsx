@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import CarouselItem from './CarouselItem.jsx';
+const borderImgUrl = "../../imgs/ticket-border.png"
 
 //======= STYLES =======//
 const CarouselBox = styled.div`
-  border: 2px solid slategrey;
-  width: 90%;
+  border-image: url(${borderImgUrl}) 10 10 10 10 repeat;
+  border: 10px;
 `
 
 const ItemContainer = styled.div`

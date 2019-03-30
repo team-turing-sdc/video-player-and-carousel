@@ -5,6 +5,10 @@ import VideoPlayer from './VideoPlayer.jsx';
 import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
 
+const DarkBG = styled.div`
+  background-color: darkslategrey;
+`
+
 
 class App extends React.Component {
   constructor(props) {
@@ -44,10 +48,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <DarkBG>
         <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
         <Carousel videos={this.state.videos}/>
-      </div>
+      </DarkBG>
     )
   }
 }
