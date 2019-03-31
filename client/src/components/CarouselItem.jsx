@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//======= STYLES =======//
 const Thumbnail = styled.img`
   height: 100px;
 `
+//======= COMPONENT =======//
 
 class CarouselItem extends React.Component {
   constructor(props){

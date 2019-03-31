@@ -2,13 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 import CarouselItem from './CarouselItem.jsx';
+const borderImgUrl = "../../imgs/ticket-border.png"
 
 //======= STYLES =======//
+
 const ItemContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 80%;
+  justify-content: space-around;
+  width: 100%;
+  padding: 5px 0px;
 `
 
 //======= COMPONENT =======//
@@ -21,11 +24,14 @@ class Carousel extends React.Component {
 
   render() {
     return(
-      <ItemContainer>
-       {this.props.videos.map((vid) => {
-         return (<CarouselItem video={vid}/>)
-       })}
-      </ItemContainer>
+
+        <ItemContainer>
+        {this.props.videos.map((vid, idx) => {
+          return (<CarouselItem key={idx} video={vid}/>)
+        })}
+        </ItemContainer>
+
+
     )
   }
 }

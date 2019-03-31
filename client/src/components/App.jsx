@@ -5,6 +5,21 @@ import VideoPlayer from './VideoPlayer.jsx';
 import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
 
+//======= STYLES =======//
+
+const borderImgUrl = "../../imgs/ticket-border.png"
+
+const DarkBG = styled.div`
+  background-color: darkslategrey;
+`
+const CarouselBox = styled.div`
+  border-image: url(${borderImgUrl}) 10 10 10 10 repeat round;
+  border: 10px;
+  width: 90%;
+  height: 200px;
+  `
+
+//======= COMPONENT =======//
 
 class App extends React.Component {
   constructor(props) {
@@ -44,10 +59,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <DarkBG>
         <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
-        <Carousel videos={this.state.videos}/>
-      </div>
+        <CarouselBox>
+         <Carousel videos={this.state.videos}/>
+        </CarouselBox>
+      </DarkBG>
     )
   }
 }
