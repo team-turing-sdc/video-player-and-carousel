@@ -13,10 +13,11 @@ const DarkBG = styled.div`
   background-color: darkslategrey;
 `
 const CarouselBox = styled.div`
-  border-image: url(${borderImgUrl}) 10 10 10 10 repeat round;
-  border: 10px;
+  /* border-image: url(${borderImgUrl}) 10 10 10 10 repeat round;
+  border: 10px; */
+  border: 2px solid antiquewhite;
   width: 90%;
-  height: 200px;
+  margin: 10px;
   `
 
 //======= COMPONENT =======//

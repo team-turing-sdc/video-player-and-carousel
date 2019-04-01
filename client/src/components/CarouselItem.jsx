@@ -5,8 +5,8 @@ import styled from 'styled-components';
 const Thumbnail = styled.img`
   height: 100px;
 `
-//======= COMPONENT =======//
 
+//======= COMPONENT =======//
 class CarouselItem extends React.Component {
   constructor(props){
     super(props);
