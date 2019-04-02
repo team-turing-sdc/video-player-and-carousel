@@ -1,12 +1,15 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 
 import CarouselItem from '../CarouselItem';
+import sampleData from '../../sampleData';
 
-xdescribe('Carousel Item', () => {
+describe('Carousel Item', () => {
   it('should mount correctly', () => {
-    const component = mount(<CarouselItem />)
+    let dummyVid = sampleData.associatedVideos[0];
 
-    expect(component).toMatchSnapshot();
+    const component = shallow(<CarouselItem video={dummyVid}/>)
+
+    expect(component.exists).toBe(true);
   })
 })
