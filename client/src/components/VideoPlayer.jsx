@@ -6,10 +6,17 @@ const VideoTitle = styled.p`
   text-transform: uppercase;
   font-family: Helvetica;
 `
+const PlayerImage = styled.img`
+  width: 80%;
+`
 
 class VideoPlayer extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isClicked: false
+    }
   }
 
   render() {
@@ -17,10 +24,17 @@ class VideoPlayer extends React.Component {
     let youtubeURL = "https://www.youtube.com/embed/";
     let vidID = this.props.video.url.split('=')[1];
 
+    let videoDisplay;
+    if (this.state.isClicked) {
+      videoDisplay = (<iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameBorder="0">
+                      </iframe>)
+    } else {
+      videoDisplay = (<PlayerImage src={`http://img.youtube.com/vi/${vidID}/hqdefault.jpg`}/>)
+    }
+
     return (
       <div className="videoPlayer">
-      <iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameBorder="0">
-      </iframe>
+      {videoDisplay}
       <VideoTitle>{this.props.movieTitle}: {this.props.video.title}</VideoTitle>
       </div>
     )
