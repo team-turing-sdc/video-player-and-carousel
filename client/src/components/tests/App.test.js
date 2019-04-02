@@ -7,6 +7,6 @@ xdescribe('App', () => {
   it('should render correctly', () => {
     const component = shallow(<App/>);
 
-    expect(component).toMatchSnapshot();
+    expect(component.exists()).toBe(true);
   })
 })
