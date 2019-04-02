@@ -31,6 +31,7 @@ class VideoPlayer extends React.Component {
     let vidID = this.props.video.url.split('=')[1];
 
     let videoDisplay;
+
     if (this.state.isClicked) {
       videoDisplay = (
       <iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameBorder="0">
