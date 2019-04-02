@@ -10,6 +10,6 @@ describe('Carousel Item', () => {
 
     const component = shallow(<CarouselItem video={dummyVid}/>)
 
-    expect(component.exists).toBe(true);
+    expect(component.exists()).toBe(true);
   })
 })
