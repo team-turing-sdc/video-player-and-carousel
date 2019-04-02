@@ -19,6 +19,12 @@ class VideoPlayer extends React.Component {
     }
   }
 
+  handleImgClick() {
+    this.setState({
+      isClicked: true
+    })
+  }
+
   render() {
     //"https://www.youtube.com/watch?v=UMaAF2WTK1A" --> "https://www.youtube.com/embed/UMaAF2WTK1A"
     let youtubeURL = "https://www.youtube.com/embed/";
@@ -26,10 +32,13 @@ class VideoPlayer extends React.Component {
 
     let videoDisplay;
     if (this.state.isClicked) {
-      videoDisplay = (<iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameBorder="0">
-                      </iframe>)
+      videoDisplay = (
+      <iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameBorder="0">
+      </iframe>
+      )
     } else {
-      videoDisplay = (<PlayerImage src={`http://img.youtube.com/vi/${vidID}/hqdefault.jpg`}/>)
+      videoDisplay = (
+      <PlayerImage src={`http://img.youtube.com/vi/${vidID}/hqdefault.jpg`} onClick={() => {this.handleImgClick()}}/>)
     }
 
     return (
