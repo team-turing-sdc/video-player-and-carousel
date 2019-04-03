@@ -19,7 +19,6 @@ const CarouselBox = styled.div`
   border: 10px; */
   border: 2px solid antiquewhite;
   width: 90%;
-  height: 30%;
   margin: 10px;
   `
 
