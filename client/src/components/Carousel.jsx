@@ -10,9 +10,14 @@ const ItemContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
-  padding: 5px 0px;
+  height: 30%;
+  padding: 1em 0em;
+  overflow: hidden;
 `
-
+const Thumbnail = styled.div`
+  width: 15%;
+  margin: 1%;
+`
 //======= COMPONENT =======//
 
 class Carousel extends React.Component {
@@ -26,7 +31,11 @@ class Carousel extends React.Component {
 
         <ItemContainer>
         {this.props.videos.map((vid, idx) => {
-          return (<CarouselItem key={idx} video={vid}/>)
+          return (
+            <Thumbnail>
+              <CarouselItem key={idx} video={vid}/>
+            </Thumbnail>
+          )
         })}
         </ItemContainer>
 

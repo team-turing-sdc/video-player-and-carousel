@@ -6,10 +6,32 @@ const VideoTitle = styled.p`
   text-transform: uppercase;
   font-family: Helvetica;
 `
+const PlayerImageBox = styled.div`
+  width: 90%;
+  height: 51%;
+  position: relative;
+  overflow: hidden;
+`
 const PlayerImage = styled.img`
-  width: 80%;
+  width: 100%;
+`
+const VideoPlayerBox = styled.div`
+  width: 90%;
+  height: 51%;
+  padding-top:  56.25%;
+  position: relative;
+  overflow: hidden;
+`
+const IFrame = styled.iframe`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 0;
 `
 
+//======= COMPONENT =======//
 class VideoPlayer extends React.Component {
   constructor(props) {
     super(props);
@@ -34,12 +56,16 @@ class VideoPlayer extends React.Component {
 
     if (this.state.isClicked) {
       videoDisplay = (
-      <iframe width="1200" height="700" src={`${youtubeURL}${vidID}?autoplay=0&controls=0`} frameBorder="0">
-      </iframe>
+        <VideoPlayerBox>
+          <IFrame src={`${youtubeURL}${vidID}?autoplay=0&controls=0`}/>
+        </VideoPlayerBox>
       )
     } else {
       videoDisplay = (
-      <PlayerImage src={`http://img.youtube.com/vi/${vidID}/hqdefault.jpg`} onClick={() => {this.handleImgClick()}}/>)
+        <PlayerImageBox>
+          <PlayerImage src={`http://img.youtube.com/vi/${vidID}/hqdefault.jpg`} onClick={() => {this.handleImgClick()}}/>
+        </PlayerImageBox>
+      )
     }
 
     return (

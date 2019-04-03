@@ -10,14 +10,15 @@ import sampleData from '../sampleData.js';
 const borderImgUrl = "../../imgs/ticket-border.png"
 
 const DarkBG = styled.div`
-  background-color: darkslategrey;
+  background-color:  #4C4C4C;
+  width: 50%;
+  padding: 10px;
 `
 const CarouselBox = styled.div`
   /* border-image: url(${borderImgUrl}) 10 10 10 10 repeat round;
   border: 10px; */
   border: 2px solid antiquewhite;
   width: 90%;
-  margin: 10px;
   `
 
 //======= COMPONENT =======//
@@ -61,7 +62,9 @@ class App extends React.Component {
   render() {
     return (
       <DarkBG>
-        <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
+
+          <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
+
         <CarouselBox>
          <Carousel videos={this.state.videos}/>
         </CarouselBox>

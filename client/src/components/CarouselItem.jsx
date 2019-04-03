@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 //======= STYLES =======//
-const Thumbnail = styled.img`
-  height: 100px;
-`
+
 
 //======= COMPONENT =======//
 class CarouselItem extends React.Component {
@@ -19,7 +17,7 @@ class CarouselItem extends React.Component {
 
   render(){
     return (
-        <Thumbnail src={this.getThumbFromUrl(this.props.video.url)}/>
+        <img src={this.getThumbFromUrl(this.props.video.url)} style={{width: "100%"}}/>
     )
   }
 }
