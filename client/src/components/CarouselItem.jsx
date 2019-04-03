@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 //======= STYLES =======//
-// const Thumbnail = styled.img`
-//   height: 10%;
-// `
+
 
 //======= COMPONENT =======//
 class CarouselItem extends React.Component {

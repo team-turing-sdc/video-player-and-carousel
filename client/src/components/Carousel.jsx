@@ -16,6 +16,7 @@ const ItemContainer = styled.div`
 `
 const Thumbnail = styled.div`
   width: 15%;
+  margin: 1%;
 `
 //======= COMPONENT =======//
 
