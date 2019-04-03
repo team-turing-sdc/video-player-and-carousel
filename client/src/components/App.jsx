@@ -11,7 +11,7 @@ const borderImgUrl = "../../imgs/ticket-border.png"
 
 const DarkBG = styled.div`
   background-color:  #4C4C4C;
-  width: 75%;
+  width: 50%;
   padding: 10px;
 `
 const CarouselBox = styled.div`
