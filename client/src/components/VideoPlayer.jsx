@@ -7,7 +7,7 @@ const VideoTitle = styled.p`
   font-family: Helvetica;
 `
 const PlayerImage = styled.img`
-  width: 80%;
+  width: 100%;
 `
 
 class VideoPlayer extends React.Component {

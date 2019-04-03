@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 //======= STYLES =======//
 const Thumbnail = styled.img`
-  height: 100px;
+  height: 4em;
 `
 
 //======= COMPONENT =======//

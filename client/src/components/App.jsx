@@ -10,8 +10,8 @@ import sampleData from '../sampleData.js';
 const borderImgUrl = "../../imgs/ticket-border.png"
 
 const DarkBG = styled.div`
-  background-color: darkslategrey;
-  width: 80%;
+  background-color:  #4C4C4C;
+  width: 50%;
   padding: 10px;
 `
 const CarouselBox = styled.div`
@@ -19,6 +19,7 @@ const CarouselBox = styled.div`
   border: 10px; */
   border: 2px solid antiquewhite;
   width: 90%;
+  height: 30%;
   margin: 10px;
   `
 

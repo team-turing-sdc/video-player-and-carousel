@@ -10,7 +10,7 @@ const ItemContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
-  padding: 5px 0px;
+  padding: 1em 0em;
 `
 
 //======= COMPONENT =======//
