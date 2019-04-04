@@ -27,13 +27,15 @@ class Carousel extends React.Component {
   }
 
   render() {
+    const {videos, handleThumbClick} = this.props;
+
     return(
 
         <ItemContainer>
-        {this.props.videos.map((vid, idx) => {
+        {videos.map((vid, idx) => {
           return (
             <Thumbnail>
-              <CarouselItem key={idx} video={vid} handleThumbClick={this.props.handleThumbClick}/>
+              <CarouselItem key={idx} video={vid} handleThumbClick={handleThumbClick}/>
             </Thumbnail>
           )
         })}

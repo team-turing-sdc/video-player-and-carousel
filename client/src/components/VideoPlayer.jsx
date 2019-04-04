@@ -53,9 +53,11 @@ class VideoPlayer extends React.Component {
   }
 
   render() {
+    const {video, movieTitle} = this.props;
+
     //"https://www.youtube.com/watch?v=UMaAF2WTK1A" --> "https://www.youtube.com/embed/UMaAF2WTK1A"
     let youtubeURL = "https://www.youtube.com/embed/";
-    let vidID = this.props.video.url.split('=')[1];
+    let vidID = video.url.split('=')[1];
 
     let videoDisplay;
 
@@ -76,7 +78,7 @@ class VideoPlayer extends React.Component {
     return (
       <div className="videoPlayer">
       {videoDisplay}
-      <VideoTitle>{this.props.movieTitle}: {this.props.video.title}</VideoTitle>
+      <VideoTitle>{movieTitle}: {video.title}</VideoTitle>
       </div>
     )
   }

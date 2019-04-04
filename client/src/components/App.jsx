@@ -66,13 +66,15 @@ class App extends React.Component {
   }
 
   render() {
+    const {movieTitle, playerVideo, videos} = this.state;
+
     return (
       <DarkBG>
 
-        <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
+        <VideoPlayer movieTitle={movieTitle} video={playerVideo}/>
 
         <CarouselBox>
-         <Carousel videos={this.state.videos} handleThumbClick={this.handleThumbClick.bind(this)}/>
+         <Carousel videos={videos} handleThumbClick={this.handleThumbClick.bind(this)}/>
         </CarouselBox>
       </DarkBG>
     )
