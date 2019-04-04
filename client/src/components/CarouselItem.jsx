@@ -4,6 +4,9 @@ import styled from 'styled-components';
 //======= STYLES =======//
 const ThumbImage = styled.img`
   width: 100%;
+  transition-property: opacity;
+  transition-duration: .2s;
+
   :hover {
     opacity: .3;
   }
