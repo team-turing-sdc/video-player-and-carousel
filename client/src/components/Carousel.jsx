@@ -24,7 +24,6 @@ const Thumbnail = styled.div`
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
@@ -34,7 +33,9 @@ class Carousel extends React.Component {
         {this.props.videos.map((vid, idx) => {
           return (
             <Thumbnail>
-              <CarouselItem key={idx} video={vid}/>
+              <CarouselItem key={idx} video={vid} onClick={() => {
+                this.props.handleThumbClick(vid);
+              }}/>
             </Thumbnail>
           )
         })}
