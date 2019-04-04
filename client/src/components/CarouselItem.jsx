@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 //======= STYLES =======//
-
+const ThumbImage = styled.img`
+  width: 100%;
+  :hover {
+    opacity: .3;
+  }
+`
 
 //======= COMPONENT =======//
 class CarouselItem extends React.Component {
@@ -17,7 +22,7 @@ class CarouselItem extends React.Component {
 
   render(){
     return (
-        <img src={this.getThumbFromUrl(this.props.video.url)} style={{width: "100%"}}/>
+      <ThumbImage src={this.getThumbFromUrl(this.props.video.url)}/>
     )
   }
 }
