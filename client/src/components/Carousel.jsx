@@ -33,9 +33,7 @@ class Carousel extends React.Component {
         {this.props.videos.map((vid, idx) => {
           return (
             <Thumbnail>
-              <CarouselItem key={idx} video={vid} onClick={() => {
-                this.props.handleThumbClick(vid);
-              }}/>
+              <CarouselItem key={idx} video={vid} handleThumbClick={this.props.handleThumbClick}/>
             </Thumbnail>
           )
         })}
