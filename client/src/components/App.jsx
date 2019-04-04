@@ -34,6 +34,12 @@ class App extends React.Component {
     }
   }
 
+  handleThumbClick(video) {
+    this.setState({
+      playerVideo: video
+    })
+  }
+
   getAssocVideos(id) {
     return fetch(`http://localhost:3333/associatedVideos?movieID=${id}`, {
       method: "GET",
@@ -63,10 +69,10 @@ class App extends React.Component {
     return (
       <DarkBG>
 
-          <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
+        <VideoPlayer movieTitle={this.state.movieTitle} video={this.state.playerVideo}/>
 
         <CarouselBox>
-         <Carousel videos={this.state.videos}/>
+         <Carousel videos={this.state.videos} handleThumbClick={this.handleThumbClick.bind(this)}/>
         </CarouselBox>
       </DarkBG>
     )
