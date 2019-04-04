@@ -10,7 +10,7 @@
     "react-dev": "webpack -d --watch",
     "seed-db": "mongoimport --db fandangit --collection movies --drop --file mock_movie_data.json --jsonArray",
     "server-dev": "nodemon server/index.js",
-    "test":"jest"
+    "test":"jest --coverage"
 
   },
   "dependencies": {
