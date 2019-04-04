@@ -15,6 +15,8 @@ const PlayerImageBox = styled.div`
 `
 const PlayerImage = styled.img`
   width: 100%;
+  transition-property: opacity;
+  transition-duration: .3s;
 
   :hover {
     opacity: .6;
