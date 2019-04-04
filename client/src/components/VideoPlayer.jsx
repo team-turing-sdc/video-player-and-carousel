@@ -37,7 +37,11 @@ const IFrame = styled.iframe`
 `
 
 const PlayButton = styled.img`
-
+  width: 20%;
+  position: absolute;
+  top: 37%;
+  left: 40%;
+  z-index: 3;
 `
 
 //======= COMPONENT =======//
