@@ -27,7 +27,7 @@ class CarouselItem extends React.Component {
     } = this.props;
 
     return (
-      <ThumbImage src={this.getThumbFromUrl(this.props.video.url)} onClick={() => {
+      <ThumbImage src={this.getThumbFromUrl(video.url)} onClick={() => {
         handleThumbClick(video);
       }}/>
     )
