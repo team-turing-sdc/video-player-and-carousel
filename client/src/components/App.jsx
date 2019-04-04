@@ -66,6 +66,8 @@ class App extends React.Component {
   }
 
   render() {
+    // const {movieTitle, playerVideo, videos} = this.state;
+
     return (
       <DarkBG>
 
