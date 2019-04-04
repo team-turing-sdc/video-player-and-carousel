@@ -36,6 +36,10 @@ const IFrame = styled.iframe`
   border: 0;
 `
 
+const PlayButton = styled.img`
+
+`
+
 //======= COMPONENT =======//
 class VideoPlayer extends React.Component {
   constructor(props) {
@@ -71,6 +75,7 @@ class VideoPlayer extends React.Component {
       videoDisplay = (
         <PlayerImageBox>
           <PlayerImage src={`http://img.youtube.com/vi/${vidID}/hqdefault.jpg`} onClick={() => {this.handleImgClick()}}/>
+          <PlayButton src="/imgs/play-button.png"/>
         </PlayerImageBox>
       )
     }
