@@ -11,9 +11,14 @@ const PlayerImageBox = styled.div`
   height: 51%;
   position: relative;
   overflow: hidden;
+  background: black;
 `
 const PlayerImage = styled.img`
   width: 100%;
+
+  :hover {
+    opacity: .6;
+  }
 `
 const VideoPlayerBox = styled.div`
   width: 90%;
