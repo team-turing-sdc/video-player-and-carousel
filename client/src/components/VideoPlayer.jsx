@@ -42,6 +42,7 @@ const PlayButton = styled.img`
   top: 37%;
   left: 40%;
   z-index: 3;
+  pointer-events: none;
 `
 
 //======= COMPONENT =======//
