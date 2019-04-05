@@ -37,7 +37,6 @@ const IFrame = styled.iframe`
   top: 0;
   border: 0;
 `
-
 const PlayButton = styled.img`
   width: 20%;
   position: absolute;
