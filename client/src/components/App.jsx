@@ -8,7 +8,7 @@ import sampleData from '../sampleData.js';
 //======= STYLES =======//
 const DarkBG = styled.div`
   background-color:  #4C4C4C;
-  width: 70%;
+  width: 60%;
   padding: 10px;
 `
 // const CarouselBox = styled.div`
@@ -25,7 +25,7 @@ const CarouselBox = styled.div`
   height: 20%;
   border: solid teal;
   border-width: 10px 50px;
-  border-image: url("/imgs/ticket-border.png") 10% repeat stretch;
+  border-image: url("/imgs/ticket-border.png") 10% repeat;
   padding: 1% 2%;
   `
 
