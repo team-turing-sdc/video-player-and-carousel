@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 //======= STYLES =======//
 const VideoTitle = styled.p`
+  color: white;
   text-transform: uppercase;
   font-family: Helvetica;
 `
@@ -89,7 +90,7 @@ class VideoPlayer extends React.Component {
     return (
       <div className="videoPlayer">
       {videoDisplay}
-      <VideoTitle>{movieTitle}: {video.title}</VideoTitle>
+      <VideoTitle>{video.title}</VideoTitle>
       </div>
     )
   }
