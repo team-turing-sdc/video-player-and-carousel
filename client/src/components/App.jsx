@@ -21,7 +21,7 @@ const DarkBG = styled.div`
 
 const CarouselBox = styled.div`
   /*border: 2px solid antiquewhite;*/
-  width: 80%;
+  width: 76%;
   height: 20%;
   border: solid teal;
   border-width: 10px 50px;
