@@ -11,7 +11,6 @@ const ItemContainer = styled.div`
   justify-content: space-around;
   width: 100%;
   height: 30%;
-  padding: 1em 0em;
   overflow: hidden;
 `
 const Thumbnail = styled.div`

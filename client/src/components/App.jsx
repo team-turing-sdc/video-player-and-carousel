@@ -6,19 +6,18 @@ import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
 
 //======= STYLES =======//
-
-const borderImgUrl = "../../imgs/ticket-border.png"
-
 const DarkBG = styled.div`
   background-color:  #4C4C4C;
   width: 60%;
   padding: 10px;
 `
 const CarouselBox = styled.div`
-  /* border-image: url(${borderImgUrl}) 10 10 10 10 repeat round;
-  border: 10px; */
-  border: 2px solid antiquewhite;
-  width: 90%;
+  /*border: 2px solid antiquewhite;*/
+  width: 80%;
+  background-image: url("/imgs/ticket-border.png");
+  background-size: 100% 100%;
+  padding: 2.5% 10%;
+
   `
 
 //======= COMPONENT =======//
