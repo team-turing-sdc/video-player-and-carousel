@@ -21,12 +21,12 @@ const DarkBG = styled.div`
 
 const CarouselBox = styled.div`
   /*border: 2px solid antiquewhite;*/
-  width: 76%;
+  width: 80%;
   height: 20%;
   border: solid teal;
-  border-width: 10px 50px;
+  border-width: 10px 40px;
   border-image: url("/imgs/ticket-border.png") 10% repeat;
-  padding: 1% 2%;
+  padding: 1% 0%;
   `
 
 //======= COMPONENT =======//
