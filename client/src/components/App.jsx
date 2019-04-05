@@ -8,16 +8,25 @@ import sampleData from '../sampleData.js';
 //======= STYLES =======//
 const DarkBG = styled.div`
   background-color:  #4C4C4C;
-  width: 60%;
+  width: 70%;
   padding: 10px;
 `
+// const CarouselBox = styled.div`
+//   /*border: 2px solid antiquewhite;*/
+//   width: 80%;
+//   background-image: url("/imgs/ticket-border.png");
+//   background-size: 100% 100%;
+//   padding: 2.5% 10%;
+//   `
+
 const CarouselBox = styled.div`
   /*border: 2px solid antiquewhite;*/
   width: 80%;
-  background-image: url("/imgs/ticket-border.png");
-  background-size: 100% 100%;
-  padding: 2.5% 10%;
-
+  height: 20%;
+  border: solid teal;
+  border-width: 10px 50px;
+  border-image: url("/imgs/ticket-border.png") 10% repeat stretch;
+  padding: 1% 2%;
   `
 
 //======= COMPONENT =======//
