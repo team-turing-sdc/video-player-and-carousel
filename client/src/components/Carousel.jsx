@@ -93,13 +93,22 @@ class Carousel extends React.Component {
     })
   }
 
+  prevSlide() {
+    const { position } = this.state
+    const { videos } = this.props
+    const numItems = videos.length || 1
+    this.setState({
+      position: position === 0 ? numItems - 1 : position - 1
+    })
+  }
+
   render() {
     const {videos, handleThumbClick} = this.props;
 
     return(
       <Wrapper>
          <PrevButton onClick={() => {
-            this.nextSlide();
+            this.prevSlide();
           }}>
           <i className="fas fa-angle-left"></i>
         </PrevButton>
