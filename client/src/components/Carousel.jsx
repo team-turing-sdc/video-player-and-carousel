@@ -42,7 +42,7 @@ class Carousel extends React.Component {
     return itemIndex - position
   }
 
-  nextSlide = () => {
+  nextSlide() {
     const { position } = this.state
     const { videos } = this.props
     const numItems = videos.length || 1
@@ -55,7 +55,7 @@ class Carousel extends React.Component {
     const {videos, handleThumbClick} = this.props;
 
     return(
-
+      <div>
         <ItemContainer>
         {videos.map((vid, idx) => {
           return (
@@ -65,6 +65,10 @@ class Carousel extends React.Component {
           )
         })}
         </ItemContainer>
+        <button onClick={() => {
+          this.nextSlide();
+        }}>NEXT</button>
+      </div>
 
 
     )
