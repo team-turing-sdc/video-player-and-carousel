@@ -47,6 +47,20 @@ const NextButton = styled.button`
     outline: none;
   }
 `
+const PrevButton = styled.button`
+  border: none;
+  font-size: 1.5em;
+  background: none;
+  color: white;
+  text-align: center;
+  margin-right: -2%;
+  margin-top: 0.3%;
+  cursor: pointer;
+
+  :focus {
+    outline: none;
+  }
+`
 
 //======= COMPONENT =======//
 
@@ -79,11 +93,25 @@ class Carousel extends React.Component {
     })
   }
 
+  prevSlide() {
+    const { position } = this.state
+    const { videos } = this.props
+    const numItems = videos.length || 1
+    this.setState({
+      position: position === 0 ? numItems - 1 : position - 1
+    })
+  }
+
   render() {
     const {videos, handleThumbClick} = this.props;
 
     return(
       <Wrapper>
+         <PrevButton onClick={() => {
+            this.prevSlide();
+          }}>
+          <i className="fas fa-angle-left"></i>
+        </PrevButton>
         <CarouselBox>
           <ItemContainer>
           {videos.map((vid, idx) => {
