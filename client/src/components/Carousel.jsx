@@ -18,6 +18,7 @@ const Thumbnail = styled.div`
   flex-basis: 20%;
   margin-right: 20px;
   background: black;
+  order: ${(props) => props.order};
 `
 //======= COMPONENT =======//
 
@@ -34,10 +35,20 @@ class Carousel extends React.Component {
     const { position } = this.state
     const { videos } = this.props
     const numItems = videos.length || 1
+
     if (itemIndex - position < 0) {
       return numItems - Math.abs(itemIndex - position)
     }
     return itemIndex - position
+  }
+
+  nextSlide = () => {
+    const { position } = this.state
+    const { videos } = this.props
+    const numItems = videos.length || 1
+    this.setState({
+      position: position === numItems - 1 ? 0 : position + 1
+    })
   }
 
   render() {
