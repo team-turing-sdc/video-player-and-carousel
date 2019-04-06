@@ -57,7 +57,7 @@ class CarouselItem extends React.Component {
           this.setState({dispTitle: false})
         }}/>
         <TitleOverlay vis={this.state.dispTitle ? 'visible' : 'hidden'}>
-          {video.title}
+          <b>{video.title}</b>
         </TitleOverlay>
       </Wrapper>
     )

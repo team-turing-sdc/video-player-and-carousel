@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 //======= STYLES =======//
+const Wrapper = styled.div`
+  margin-left: 1.5%;
+`
 const VideoTitle = styled.p`
   color: white;
   text-transform: uppercase;
@@ -88,10 +91,10 @@ class VideoPlayer extends React.Component {
     }
 
     return (
-      <div className="videoPlayer">
+      <Wrapper>
       {videoDisplay}
       <VideoTitle>{video.title}</VideoTitle>
-      </div>
+      </Wrapper>
     )
   }
 }
