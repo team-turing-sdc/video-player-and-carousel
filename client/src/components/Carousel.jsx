@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
 `
-
 const CarouselBox = styled.div`
   /*border: 2px solid antiquewhite;*/
   width: 80%;
@@ -41,6 +40,8 @@ const NextButton = styled.button`
   background: none;
   color: white;
   text-align: center;
+  margin-left: -2%;
+  margin-top: 0.3%;
 
   :focus {
     outline: none;
