@@ -43,6 +43,10 @@ const NextButton = styled.button`
   background: none;
   color: white;
   text-align: center;
+
+  :focus{
+    outline: none;
+  }
 `
 
 //======= COMPONENT =======//
