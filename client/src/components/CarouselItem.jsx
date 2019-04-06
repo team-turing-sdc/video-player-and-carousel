@@ -16,6 +16,10 @@ const ThumbImage = styled.img`
 class CarouselItem extends React.Component {
   constructor(props){
     super(props);
+
+    this.state = {
+      dispTitle: false
+    }
   }
 
   getThumbFromUrl(url) {
@@ -32,6 +36,10 @@ class CarouselItem extends React.Component {
     return (
       <ThumbImage src={this.getThumbFromUrl(video.url)} onClick={() => {
         handleThumbClick(video);
+      }} onMouseEnter={() => {
+        this.setState({dispTitle: true})
+      }} onMouseLeave={() => {
+        this.setState({dispTitle: false})
       }}/>
     )
   }
