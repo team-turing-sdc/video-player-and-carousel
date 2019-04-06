@@ -8,14 +8,15 @@ import CarouselItem from './CarouselItem.jsx';
 const ItemContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  margin: 0 0 20px 20px;
   width: 100%;
   height: 30%;
   overflow: hidden;
 `
 const Thumbnail = styled.div`
-  width: 15%;
-  margin: 1%;
+  flex: 1 0 100%;
+  flex-basis: 20%;
+  margin-right: 20px;
   background: black;
 `
 //======= COMPONENT =======//
