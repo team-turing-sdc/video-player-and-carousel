@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 //======= STYLES =======//
+const Wrapper = styled.div`
+  position: relative;
+  top: 0;
+`
 const ThumbImage = styled.img`
   width: 100%;
   transition-property: opacity;
@@ -13,9 +17,14 @@ const ThumbImage = styled.img`
 `
 const TitleOverlay = styled.div`
   visibility: ${(props) => props.vis};
+  font-family: Helvetica;
+  font-size: 0.75em;
+  text-transform: uppercase;
   color: white;
   position: absolute;
+  top: 2%;
   z-index: 3;
+  pointer-events: none;
 `
 
 //======= COMPONENT =======//
@@ -40,7 +49,7 @@ class CarouselItem extends React.Component {
     } = this.props;
 
     return (
-      <div>
+      <Wrapper>
         <ThumbImage src={this.getThumbFromUrl(video.url)} onClick={() => {
           handleThumbClick(video);
         }} onMouseEnter={() => {
@@ -49,10 +58,9 @@ class CarouselItem extends React.Component {
           this.setState({dispTitle: false})
         }}/>
         <TitleOverlay vis={this.state.dispTitle ? 'visible' : 'hidden'}>
-          YOYYOYOYOYO
+          {video.title}
         </TitleOverlay>
-
-      </div>
+      </Wrapper>
     )
   }
 }
