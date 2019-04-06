@@ -23,7 +23,7 @@ const CarouselBox = styled.div`
 const ItemContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0 0 20px 20px;
+  align-items: center;
   width: 100%;
   height: 30%;
   overflow: hidden;
@@ -36,15 +36,13 @@ const Thumbnail = styled.div`
   order: ${(props) => props.order};
 `
 const NextButton = styled.button`
-  border: 2px solid slategrey;
-  border-radius: 50%;
-  height: 2em;
-  width: 2em;
+  border: none;
+  font-size: 1.5em;
   background: none;
   color: white;
   text-align: center;
 
-  :focus{
+  :focus {
     outline: none;
   }
 `
