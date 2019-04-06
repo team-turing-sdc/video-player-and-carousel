@@ -80,10 +80,8 @@ class App extends React.Component {
       <DarkBG>
 
         <VideoPlayer movieTitle={movieTitle} video={playerVideo}/>
+        <Carousel videos={videos} handleThumbClick={this.handleThumbClick.bind(this)}/>
 
-        <CarouselBox>
-         <Carousel videos={videos} handleThumbClick={this.handleThumbClick.bind(this)}/>
-        </CarouselBox>
       </DarkBG>
     )
   }

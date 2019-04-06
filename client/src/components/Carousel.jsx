@@ -5,10 +5,24 @@ import CarouselItem from './CarouselItem.jsx';
 
 //======= STYLES =======//
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+const CarouselBox = styled.div`
+  /*border: 2px solid antiquewhite;*/
+  width: 80%;
+  height: 20%;
+  border: solid teal;
+  border-width: 10px 40px;
+  border-image: url("/imgs/ticket-border.png") 10% repeat;
+  padding: 1% 0%;
+  `
 const ItemContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0 0 20px 20px;
+  align-items: center;
   width: 100%;
   height: 30%;
   overflow: hidden;
@@ -20,6 +34,21 @@ const Thumbnail = styled.div`
   background: black;
   order: ${(props) => props.order};
 `
+const NextButton = styled.button`
+  border: none;
+  font-size: 1.5em;
+  background: none;
+  color: white;
+  text-align: center;
+  margin-left: -2%;
+  margin-top: 0.3%;
+  cursor: pointer;
+
+  :focus {
+    outline: none;
+  }
+`
+
 //======= COMPONENT =======//
 
 class Carousel extends React.Component {
@@ -55,22 +84,24 @@ class Carousel extends React.Component {
     const {videos, handleThumbClick} = this.props;
 
     return(
-      <div>
-        <ItemContainer>
-        {videos.map((vid, idx) => {
-          return (
-            <Thumbnail key={idx} order={this.getOrder(idx)}>
-              <CarouselItem  video={vid} handleThumbClick={handleThumbClick}/>
-            </Thumbnail>
-          )
-        })}
-        </ItemContainer>
-        <button onClick={() => {
-          this.nextSlide();
-        }}>NEXT</button>
-      </div>
-
-
+      <Wrapper>
+        <CarouselBox>
+          <ItemContainer>
+          {videos.map((vid, idx) => {
+            return (
+              <Thumbnail key={idx} order={this.getOrder(idx)}>
+                <CarouselItem  video={vid} handleThumbClick={handleThumbClick}/>
+              </Thumbnail>
+            )
+          })}
+          </ItemContainer>
+        </CarouselBox>
+        <NextButton onClick={() => {
+            this.nextSlide();
+          }}>
+          <i className="fas fa-angle-right"></i>
+        </NextButton>
+      </Wrapper>
     )
   }
 }
