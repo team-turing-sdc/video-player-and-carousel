@@ -8,6 +8,7 @@ import CarouselItem from './CarouselItem.jsx';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `
 
 const CarouselBox = styled.div`
@@ -35,9 +36,13 @@ const Thumbnail = styled.div`
   order: ${(props) => props.order};
 `
 const NextButton = styled.button`
+  border: 2px solid slategrey;
   border-radius: 50%;
-  height: 10%;
-  width: 10%;
+  height: 2em;
+  width: 2em;
+  background: none;
+  color: white;
+  text-align: center;
 `
 
 //======= COMPONENT =======//
@@ -89,7 +94,9 @@ class Carousel extends React.Component {
         </CarouselBox>
         <NextButton onClick={() => {
             this.nextSlide();
-          }}>></NextButton>
+          }}>
+          <i className="fas fa-angle-right"></i>
+        </NextButton>
       </Wrapper>
     )
   }
