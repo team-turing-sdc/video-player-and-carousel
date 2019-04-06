@@ -14,6 +14,8 @@ const ThumbImage = styled.img`
 const TitleOverlay = styled.div`
   visibility: ${(props) => props.vis};
   color: white;
+  position: absolute;
+  z-index: 3;
 `
 
 //======= COMPONENT =======//
