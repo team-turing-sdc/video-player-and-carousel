@@ -11,12 +11,11 @@ const Wrapper = styled.div`
   align-items: center;
 `
 const CarouselBox = styled.div`
-  /*border: 2px solid antiquewhite;*/
   width: 80%;
   height: 20%;
   border: solid teal;
   border-width: 10px 40px;
-  border-image: url("/imgs/ticket-border.png") 10% repeat;
+  border-image: url("/imgs/ticket-border.png") 9% repeat;
   padding: 1% 0%;
   `
 const ItemContainer = styled.div`
