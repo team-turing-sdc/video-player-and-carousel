@@ -24,6 +24,20 @@ const Thumbnail = styled.div`
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      position: 0
+    }
+  }
+
+  getOrder(itemIndex) {
+    const { position } = this.state
+    const { videos } = this.props
+    const numItems = videos.length || 1
+    if (itemIndex - position < 0) {
+      return numItems - Math.abs(itemIndex - position)
+    }
+    return itemIndex - position
   }
 
   render() {
@@ -34,8 +48,8 @@ class Carousel extends React.Component {
         <ItemContainer>
         {videos.map((vid, idx) => {
           return (
-            <Thumbnail>
-              <CarouselItem key={idx} video={vid} handleThumbClick={handleThumbClick}/>
+            <Thumbnail key={idx} order={this.getOrder(idx)}>
+              <CarouselItem  video={vid} handleThumbClick={handleThumbClick}/>
             </Thumbnail>
           )
         })}
