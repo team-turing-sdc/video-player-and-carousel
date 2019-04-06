@@ -42,6 +42,7 @@ const NextButton = styled.button`
   text-align: center;
   margin-left: -2%;
   margin-top: 0.3%;
+  cursor: pointer;
 
   :focus {
     outline: none;
