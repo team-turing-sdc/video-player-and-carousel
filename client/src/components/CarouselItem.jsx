@@ -8,8 +8,6 @@ const Wrapper = styled.div`
 `
 const ThumbImage = styled.img`
   width: 100%;
-  transition-property: opacity;
-  transition-duration: .2s;
 
   :hover {
     opacity: .3;
@@ -22,7 +20,8 @@ const TitleOverlay = styled.div`
   text-transform: uppercase;
   color: white;
   position: absolute;
-  top: 2%;
+  padding: 0 0.5em;
+  top: 0.5em;
   z-index: 3;
   pointer-events: none;
 `
