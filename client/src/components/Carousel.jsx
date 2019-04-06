@@ -64,22 +64,22 @@ class Carousel extends React.Component {
     const {videos, handleThumbClick} = this.props;
 
     return(
-      <CarouselBox>
-        <ItemContainer>
-        {videos.map((vid, idx) => {
-          return (
-            <Thumbnail key={idx} order={this.getOrder(idx)}>
-              <CarouselItem  video={vid} handleThumbClick={handleThumbClick}/>
-            </Thumbnail>
-          )
-        })}
-        </ItemContainer>
+      <div>
+        <CarouselBox>
+          <ItemContainer>
+          {videos.map((vid, idx) => {
+            return (
+              <Thumbnail key={idx} order={this.getOrder(idx)}>
+                <CarouselItem  video={vid} handleThumbClick={handleThumbClick}/>
+              </Thumbnail>
+            )
+          })}
+          </ItemContainer>
+        </CarouselBox>
         <button onClick={() => {
-          this.nextSlide();
-        }}>NEXT</button>
-      </CarouselBox>
-
-
+            this.nextSlide();
+          }}>NEXT</button>
+      </div>
     )
   }
 }
