@@ -11,6 +11,10 @@ const ThumbImage = styled.img`
     opacity: .3;
   }
 `
+const TitleOverlay = styled.div`
+  visibility: ${(props) => props.vis};
+  color: white;
+`
 
 //======= COMPONENT =======//
 class CarouselItem extends React.Component {
@@ -34,13 +38,19 @@ class CarouselItem extends React.Component {
     } = this.props;
 
     return (
-      <ThumbImage src={this.getThumbFromUrl(video.url)} onClick={() => {
-        handleThumbClick(video);
-      }} onMouseEnter={() => {
-        this.setState({dispTitle: true})
-      }} onMouseLeave={() => {
-        this.setState({dispTitle: false})
-      }}/>
+      <div>
+        <ThumbImage src={this.getThumbFromUrl(video.url)} onClick={() => {
+          handleThumbClick(video);
+        }} onMouseEnter={() => {
+          this.setState({dispTitle: true})
+        }} onMouseLeave={() => {
+          this.setState({dispTitle: false})
+        }}/>
+        <TitleOverlay vis={this.state.dispTitle ? 'visible' : 'hidden'}>
+          YOYYOYOYOYO
+        </TitleOverlay>
+
+      </div>
     )
   }
 }
