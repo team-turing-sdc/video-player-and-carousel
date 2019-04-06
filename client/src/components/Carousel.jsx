@@ -47,6 +47,20 @@ const NextButton = styled.button`
     outline: none;
   }
 `
+const PrevButton = styled.button`
+  border: none;
+  font-size: 1.5em;
+  background: none;
+  color: white;
+  text-align: center;
+  margin-right: -2%;
+  margin-top: 0.3%;
+  cursor: pointer;
+
+  :focus {
+    outline: none;
+  }
+`
 
 //======= COMPONENT =======//
 
@@ -84,6 +98,11 @@ class Carousel extends React.Component {
 
     return(
       <Wrapper>
+         <PrevButton onClick={() => {
+            this.nextSlide();
+          }}>
+          <i className="fas fa-angle-left"></i>
+        </PrevButton>
         <CarouselBox>
           <ItemContainer>
           {videos.map((vid, idx) => {
