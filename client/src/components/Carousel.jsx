@@ -5,6 +5,15 @@ import CarouselItem from './CarouselItem.jsx';
 
 //======= STYLES =======//
 
+const CarouselBox = styled.div`
+  /*border: 2px solid antiquewhite;*/
+  width: 80%;
+  height: 20%;
+  border: solid teal;
+  border-width: 10px 40px;
+  border-image: url("/imgs/ticket-border.png") 10% repeat;
+  padding: 1% 0%;
+  `
 const ItemContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -55,7 +64,7 @@ class Carousel extends React.Component {
     const {videos, handleThumbClick} = this.props;
 
     return(
-      <div>
+      <CarouselBox>
         <ItemContainer>
         {videos.map((vid, idx) => {
           return (
@@ -68,7 +77,7 @@ class Carousel extends React.Component {
         <button onClick={() => {
           this.nextSlide();
         }}>NEXT</button>
-      </div>
+      </CarouselBox>
 
 
     )
