@@ -19,6 +19,9 @@ const PlayerImageBox = styled.div`
 `
 const PlayerImage = styled.img`
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+
   transition-property: opacity;
   transition-duration: .3s;
 
