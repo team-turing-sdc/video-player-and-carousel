@@ -12,7 +12,7 @@ const VideoTitle = styled.p`
 `
 const PlayerImageBox = styled.div`
   width: 90%;
-  height: 51%;
+  height: 60vh;
   position: relative;
   overflow: hidden;
   background: black;
