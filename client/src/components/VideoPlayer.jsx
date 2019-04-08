@@ -12,13 +12,16 @@ const VideoTitle = styled.p`
 `
 const PlayerImageBox = styled.div`
   width: 90%;
-  height: 51%;
+  height: 60vh;
   position: relative;
   overflow: hidden;
   background: black;
 `
 const PlayerImage = styled.img`
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+
   transition-property: opacity;
   transition-duration: .3s;
 
