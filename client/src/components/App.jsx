@@ -6,7 +6,7 @@ import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
 
 //======= STYLES =======//
-const DarkBG = styled.div`
+const Wrapper = styled.div`
   background-color:  #4C4C4C;
   width: 60%;
   padding: 10px;
@@ -18,16 +18,6 @@ const DarkBG = styled.div`
 //   background-size: 100% 100%;
 //   padding: 2.5% 10%;
 //   `
-
-const CarouselBox = styled.div`
-  /*border: 2px solid antiquewhite;*/
-  width: 80%;
-  height: 20%;
-  border: solid teal;
-  border-width: 10px 40px;
-  border-image: url("/imgs/ticket-border.png") 10% repeat;
-  padding: 1% 0%;
-  `
 
 //======= COMPONENT =======//
 
@@ -77,12 +67,12 @@ class App extends React.Component {
     const {movieTitle, playerVideo, videos} = this.state;
 
     return (
-      <DarkBG>
+      <Wrapper>
 
         <VideoPlayer movieTitle={movieTitle} video={playerVideo}/>
         <Carousel videos={videos} handleThumbClick={this.handleThumbClick.bind(this)}/>
 
-      </DarkBG>
+      </Wrapper>
     )
   }
 }
