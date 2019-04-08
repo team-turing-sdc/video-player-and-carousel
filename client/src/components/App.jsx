@@ -11,13 +11,6 @@ const Wrapper = styled.div`
   width: 60%;
   padding: 10px;
 `
-// const CarouselBox = styled.div`
-//   /*border: 2px solid antiquewhite;*/
-//   width: 80%;
-//   background-image: url("/imgs/ticket-border.png");
-//   background-size: 100% 100%;
-//   padding: 2.5% 10%;
-//   `
 
 //======= COMPONENT =======//
 
