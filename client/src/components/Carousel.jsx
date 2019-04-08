@@ -13,7 +13,13 @@ const Wrapper = styled.div`
 const CarouselBox = styled.div`
   width: 80%;
   height: 20%;
-  border: solid teal;
+
+  /* Basic rectangular border (use if border-image below does not cooperate with module resizing)*/
+  border: 2px solid white;
+  padding: 1% 1%;
+
+  /* Ticket-shaped border using border-image (comment out/delete if needed) */
+  border: solid;
   border-width: 10px 40px;
   border-image: url("/imgs/ticket-border.png") 9% repeat;
   padding: 1% 0%;
@@ -39,7 +45,7 @@ const NextButton = styled.button`
   background: none;
   color: white;
   text-align: center;
-  margin-left: -2%;
+  margin-left: -2%
   margin-top: 0.3%;
   cursor: pointer;
 
