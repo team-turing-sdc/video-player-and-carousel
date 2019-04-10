@@ -1,23 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 //======= STYLES =======//
-const Wrapper = styled.div`
+const Wrapper = window.styled.div`
   margin-left: 1.5%;
+  width: 100%;
 `
-const VideoTitle = styled.p`
+const VideoTitle = window.styled.p`
   color: white;
+  opacity: 0.8;
   text-transform: uppercase;
-  font-family: Helvetica;
+  font-family: "Proxima Nova", Helvetica;
+  margin: 2% 0%;
 `
-const PlayerImageBox = styled.div`
+const PlayerImageBox = window.styled.div`
   width: 90%;
   height: 60vh;
   position: relative;
   overflow: hidden;
   background: black;
 `
-const PlayerImage = styled.img`
+const PlayerImage = window.styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -29,14 +32,14 @@ const PlayerImage = styled.img`
     opacity: .6;
   }
 `
-const VideoPlayerBox = styled.div`
+const VideoPlayerBox = window.styled.div`
   width: 90%;
   height: 51%;
   padding-top:  56.25%;
   position: relative;
   overflow: hidden;
 `
-const IFrame = styled.iframe`
+const IFrame = window.styled.iframe`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -44,7 +47,7 @@ const IFrame = styled.iframe`
   top: 0;
   border: 0;
 `
-const PlayButton = styled.img`
+const PlayButton = window.styled.img`
   width: 20%;
   position: absolute;
   top: 37%;

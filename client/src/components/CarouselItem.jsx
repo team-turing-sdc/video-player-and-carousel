@@ -1,19 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 //======= STYLES =======//
-const Wrapper = styled.div`
+const Wrapper = window.styled.div`
   position: relative;
   top: 0;
 `
-const ThumbImage = styled.img`
+const ThumbImage = window.styled.img`
   width: 100%;
 
   :hover {
     opacity: .3;
   }
 `
-const TitleOverlay = styled.div`
+const TitleOverlay = window.styled.div`
   visibility: ${(props) => props.vis};
   font-family: Helvetica;
   font-size: 0.75em;
@@ -22,7 +22,7 @@ const TitleOverlay = styled.div`
   position: absolute;
   padding: 0 0.5em;
   top: 0.5em;
-  z-index: 3;
+  z-index: 6;
   pointer-events: none;
 `
 
