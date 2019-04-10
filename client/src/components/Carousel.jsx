@@ -21,7 +21,7 @@ const CarouselBox = styled.div`
   /* Ticket-shaped border using border-image (comment out/delete if needed) */
   border: solid;
   border-width: 10px 40px;
-  border-image: url("/imgs/ticket-border.png") 9% repeat;
+  border-image: url("https://s3-us-west-2.amazonaws.com/fec-brox/images/ticket-border.png") 9% repeat;
   padding: 1% 0%;
   `
 const ItemContainer = styled.div`
