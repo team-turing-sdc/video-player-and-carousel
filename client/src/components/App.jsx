@@ -7,7 +7,7 @@ import sampleData from '../sampleData.js';
 
 //======= STYLES =======//
 const Wrapper = styled.div`
-  background-color:  #4C4C4C;
+  background: none;
   width: 60%;
   padding: 10px;
 `

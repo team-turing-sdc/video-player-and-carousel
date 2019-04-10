@@ -88,7 +88,7 @@ class VideoPlayer extends React.Component {
       videoDisplay = (
         <PlayerImageBox>
           <PlayerImage src={`http://img.youtube.com/vi/${vidID}/hqdefault.jpg`} onClick={() => {this.handleImgClick()}}/>
-          <PlayButton src="/imgs/play-button.png"/>
+          <PlayButton src="https://s3-us-west-2.amazonaws.com/fec-brox/images/play-button.png"/>
         </PlayerImageBox>
       )
     }
