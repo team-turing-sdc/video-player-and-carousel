@@ -1,16 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 import CarouselItem from './CarouselItem.jsx';
 
 //======= STYLES =======//
 
-const Wrapper = styled.div`
+const Wrapper = window.styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
 `
-const CarouselBox = styled.div`
+const CarouselBox = window.styled.div`
   width: 80%;
   height: 20%;
 
@@ -20,11 +20,12 @@ const CarouselBox = styled.div`
 
   /* Ticket-shaped border using border-image (comment out/delete if needed) */
   border: solid;
+  opacity: 0.8;
   border-width: 10px 40px;
   border-image: url("https://s3-us-west-2.amazonaws.com/fec-brox/images/ticket-border.png") 9% repeat;
   padding: 1% 0%;
   `
-const ItemContainer = styled.div`
+const ItemContainer = window.styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -32,14 +33,14 @@ const ItemContainer = styled.div`
   height: 30%;
   overflow: hidden;
 `
-const Thumbnail = styled.div`
+const Thumbnail = window.styled.div`
   flex: 1 0 100%;
   flex-basis: 20%;
   margin-right: 20px;
   background: black;
   order: ${(props) => props.order};
 `
-const NextButton = styled.button`
+const NextButton = window.styled.button`
   border: none;
   font-size: 1.5em;
   background: none;
@@ -53,7 +54,7 @@ const NextButton = styled.button`
     outline: none;
   }
 `
-const PrevButton = styled.button`
+const PrevButton = window.styled.button`
   border: none;
   font-size: 1.5em;
   background: none;

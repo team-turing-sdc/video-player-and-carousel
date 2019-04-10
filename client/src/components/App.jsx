@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 import VideoPlayer from './VideoPlayer.jsx';
 import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
 
 //======= STYLES =======//
-const Wrapper = styled.div`
+const Wrapper = window.styled.div`
   background: none;
   width: 60%;
   padding: 10px;
