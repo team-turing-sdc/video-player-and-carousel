@@ -46,7 +46,7 @@ const NextButton = window.styled.button`
   background: none;
   color: white;
   text-align: center;
-  margin-left: -2%
+  margin-left: -1%
   margin-top: 0.3%;
   cursor: pointer;
 
@@ -60,7 +60,7 @@ const PrevButton = window.styled.button`
   background: none;
   color: white;
   text-align: center;
-  margin-right: -2%;
+  margin-right: -1%;
   margin-top: 0.3%;
   cursor: pointer;
 
@@ -117,7 +117,7 @@ class Carousel extends React.Component {
          <PrevButton onClick={() => {
             this.prevSlide();
           }}>
-          <i className="fas fa-angle-left"></i>
+        <i className="fas fa-angle-left"></i>
         </PrevButton>
         <CarouselBox>
           <ItemContainer>

@@ -15,8 +15,8 @@ const ThumbImage = window.styled.img`
 `
 const TitleOverlay = window.styled.div`
   visibility: ${(props) => props.vis};
-  font-family: Helvetica;
-  font-size: 0.75em;
+  font-family: "Proxima Nova", Helvetica;
+  font-size: 0.9em;
   text-transform: uppercase;
   color: white;
   position: absolute;
