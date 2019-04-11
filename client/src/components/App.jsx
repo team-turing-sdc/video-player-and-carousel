@@ -39,7 +39,7 @@ class App extends React.Component {
       })
       .join('');
 
-    return fetch(`http://localhost:3333/associatedVideos?movieID=${urlID}`, {
+    return fetch(`http://localhost:3333/associatedVideos?movieID=${urlID || 1}`, {
       method: "GET",
       headers: {
         "Content-Type":"application/json",
