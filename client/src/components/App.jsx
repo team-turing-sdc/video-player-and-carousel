@@ -5,6 +5,8 @@ import VideoPlayer from './VideoPlayer.jsx';
 import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
 
+import getMovieData from '../getMovieData.js';
+
 //======= STYLES =======//
 const Wrapper = window.styled.div`
   background: none;
@@ -19,6 +21,13 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      urlID: window.location.pathname
+      .split('')
+      .filter((char) => {
+        return !isNaN(char);
+      })
+      .join(''),
+
       movieTitle: sampleData.name,
       videos: sampleData.associatedVideos,
       playerVideo: sampleData.associatedVideos[0]
@@ -32,31 +41,14 @@ class App extends React.Component {
   }
 
   getAssocVideos() {
-    let urlID = window.location.pathname
-      .split('')
-      .filter((char) => {
-        return !isNaN(char);
-      })
-      .join('');
-
-    return fetch(`http://localhost:3333/associatedVideos?movieID=${urlID || 1}`, {
-      method: "GET",
-      headers: {
-        "Content-Type":"application/json",
-        "Cache-Control":"no-cache"
-      }
-    })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      let videoData = data[0];
+   getMovieData(this.state.urlID)
+   .then((movieData) => {
       this.setState({
-        movieTitle: videoData.name,
-        videos: videoData.associatedVideos,
-        playerVideo: videoData.associatedVideos[0]
-      })
+      movieTitle: movieData.name,
+      videos: movieData.associatedVideos,
+      playerVideo: movieData.associatedVideos[0]
     })
+    });
   }
 
   componentDidMount() {
