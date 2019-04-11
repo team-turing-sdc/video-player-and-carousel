@@ -31,8 +31,15 @@ class App extends React.Component {
     })
   }
 
-  getAssocVideos(id) {
-    return fetch(`http://localhost:3333/associatedVideos?movieID=${id}`, {
+  getAssocVideos() {
+    let urlID = window.location.pathname
+      .split('')
+      .filter((char) => {
+        return !isNaN(char);
+      })
+      .join('');
+
+    return fetch(`http://localhost:3333/associatedVideos?movieID=${urlID}`, {
       method: "GET",
       headers: {
         "Content-Type":"application/json",
@@ -53,7 +60,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getAssocVideos(this.props.movieID);
+    this.getAssocVideos();
   }
 
   render() {

@@ -38,8 +38,15 @@ class Synopsis extends React.Component {
     }
   }
 
-  getMovieData(id) {
-    return fetch(`http://localhost:3333/associatedVideos?movieID=${id}`, {
+  getMovieData() {
+    let urlID = window.location.pathname
+    .split('')
+    .filter((char) => {
+      return !isNaN(char);
+    })
+    .join('');
+
+    return fetch(`http://localhost:3333/associatedVideos?movieID=${urlID}`, {
       method: "GET",
       headers: {
         "Content-Type":"application/json"
@@ -57,7 +64,7 @@ class Synopsis extends React.Component {
   }
 
   componentDidMount(){
-    this.getMovieData(this.props.movieID)
+    this.getMovieData()
   }
 
   render() {
