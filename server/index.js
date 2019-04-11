@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.use((req, res, next) => {
-  console.log(`serving a ${req.method} request at ${new Date}. Body: ${JSON.stringify(req.body)}`)
+  console.log(`serving a ${req.method} request at ${new Date} to url ${req.url}`)
   next();
 })
 
