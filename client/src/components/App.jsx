@@ -5,6 +5,8 @@ import VideoPlayer from './VideoPlayer.jsx';
 import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
 
+import getMovieData from './getMovieData.js';
+
 //======= STYLES =======//
 const Wrapper = window.styled.div`
   background: none;
@@ -60,6 +62,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    getMovieData();
     this.getAssocVideos();
   }
 
