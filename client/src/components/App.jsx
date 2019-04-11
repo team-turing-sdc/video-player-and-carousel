@@ -32,7 +32,12 @@ class App extends React.Component {
   }
 
   getAssocVideos(id) {
-    return fetch(`http://localhost:3333/associatedVideos?movieID=${id}`, {
+    let slashyID = window.location.pathname; // "/5/"
+    let chars = slashyID.split('')
+    let testID = chars.filter((char) => {
+      return !isNaN(char);
+    }).join('');
+    return fetch(`http://localhost:3333/associatedVideos?movieID=${testID}`, {
       method: "GET",
       headers: {
         "Content-Type":"application/json",
