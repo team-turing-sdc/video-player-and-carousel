@@ -21,6 +21,13 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      urlID: window.location.pathname
+      .split('')
+      .filter((char) => {
+        return !isNaN(char);
+      })
+      .join(''),
+
       movieTitle: sampleData.name,
       videos: sampleData.associatedVideos,
       playerVideo: sampleData.associatedVideos[0]
@@ -34,42 +41,7 @@ class App extends React.Component {
   }
 
   getAssocVideos() {
-    let urlID = window.location.pathname
-      .split('')
-      .filter((char) => {
-        return !isNaN(char);
-      })
-      .join('');
-
-    return fetch(`http://localhost:3333/associatedVideos?movieID=${urlID}`, {
-      method: "GET",
-      headers: {
-        "Content-Type":"application/json",
-        "Cache-Control":"no-cache"
-      }
-    })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      let videoData = data[0];
-      this.setState({
-        movieTitle: videoData.name,
-        videos: videoData.associatedVideos,
-        playerVideo: videoData.associatedVideos[0]
-      })
-    })
-  }
-
-  getAssocVideosTEST() {
-    let urlID = window.location.pathname
-      .split('')
-      .filter((char) => {
-        return !isNaN(char);
-      })
-      .join('');
-
-   getMovieData(urlID)
+   getMovieData(this.state.urlID)
    .then((movieData) => {
       this.setState({
       movieTitle: movieData.name,
@@ -80,7 +52,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getAssocVideosTEST();
+    this.getAssocVideos();
   }
 
   render() {
