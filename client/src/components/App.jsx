@@ -31,13 +31,15 @@ class App extends React.Component {
     })
   }
 
-  getAssocVideos(id) {
-    let slashyID = window.location.pathname; // "/5/"
-    let chars = slashyID.split('')
-    let testID = chars.filter((char) => {
-      return !isNaN(char);
-    }).join('');
-    return fetch(`http://localhost:3333/associatedVideos?movieID=${testID}`, {
+  getAssocVideos() {
+    let urlID = window.location.pathname
+      .split('')
+      .filter((char) => {
+        return !isNaN(char);
+      })
+      .join('');
+
+    return fetch(`http://localhost:3333/associatedVideos?movieID=${urlID}`, {
       method: "GET",
       headers: {
         "Content-Type":"application/json",
@@ -58,7 +60,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getAssocVideos(this.props.movieID);
+    this.getAssocVideos();
   }
 
   render() {
