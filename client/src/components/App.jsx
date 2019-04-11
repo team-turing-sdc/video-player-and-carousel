@@ -5,7 +5,7 @@ import VideoPlayer from './VideoPlayer.jsx';
 import Carousel from './Carousel.jsx';
 import sampleData from '../sampleData.js';
 
-import getMovieData from './getMovieData.js';
+import getMovieData from '../getMovieData.js';
 
 //======= STYLES =======//
 const Wrapper = window.styled.div`
