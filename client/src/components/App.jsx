@@ -61,9 +61,25 @@ class App extends React.Component {
     })
   }
 
+  getAssocVideosTEST() {
+    let urlID = window.location.pathname
+      .split('')
+      .filter((char) => {
+        return !isNaN(char);
+      })
+      .join('');
+
+    const movieData = getMovieData(urlID);
+
+    this.setState({
+      movieTitle: movieData.name,
+      videos: movieData.associatedVideos,
+      playerVideo: movieData.associatedVideos[0]
+    })
+  }
+
   componentDidMount() {
-    getMovieData();
-    this.getAssocVideos();
+    this.getAssocVideosTEST();
   }
 
   render() {
