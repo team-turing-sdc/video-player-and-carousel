@@ -69,7 +69,7 @@ class App extends React.Component {
       })
       .join('');
 
-    const movieData = getMovieData(urlID);
+    const movieData = Promise.resolve(getMovieData(urlID));
 
     this.setState({
       movieTitle: movieData.name,
