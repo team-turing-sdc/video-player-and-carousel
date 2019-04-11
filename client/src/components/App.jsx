@@ -69,13 +69,14 @@ class App extends React.Component {
       })
       .join('');
 
-    const movieData = Promise.resolve(getMovieData(urlID));
-
-    this.setState({
+   getMovieData(urlID)
+   .then((movieData) => {
+      this.setState({
       movieTitle: movieData.name,
       videos: movieData.associatedVideos,
       playerVideo: movieData.associatedVideos[0]
     })
+    });
   }
 
   componentDidMount() {
