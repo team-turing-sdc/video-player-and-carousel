@@ -41,7 +41,7 @@ class App extends React.Component {
   }
 
   getAssocVideos() {
-   getMovieData(this.state.urlID)
+   getMovieData(this.state.urlID || 1)
    .then((movieData) => {
       this.setState({
       movieTitle: movieData.name,
