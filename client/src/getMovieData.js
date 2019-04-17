@@ -12,7 +12,7 @@ const getMovieData = async (id  = 1) => {
     console.log(`movie data: `, movieData[0]);
     return movieData[0];
   } catch (err) {
-    alert(`WARNING ERROR LOOK OUT: `, err);
+    console.log(`WARNING ERROR LOOK OUT: `, err);
   }
 
 }
