@@ -6,6 +6,7 @@ const cors = require('cors');
 const db = require('./db/index');
 
 app.use(bodyParser());
+
 app.use(cors());
 
 app.use((req, res, next) => {
@@ -28,8 +29,9 @@ app.get('/associatedVideos', (req, res) => {
   })
 })
 
-app.use('/', express.static(__dirname + '/../client/dist'));
-app.use('/*', express.static(__dirname + '/../client/dist/index.html'));
+app.use('/', express.static(__dirname + '/../public/'));
+app.use('/client/dist/bundle.js', (express.static(__dirname + '/../client/dist/bundle.js')))
+app.use('/*', express.static(__dirname + '/../public/'));
 
 app.listen(PORT, () => {
   console.log(`Server active! Listening on port ${PORT}.`)
