@@ -27,7 +27,19 @@ app.get('/associatedVideos', (req, res) => {
       res.json(results);
     }
   })
-})
+});
+
+app.post('/associatedVideos', (req, res) => {
+  res.end("this is where you'll come to add something!");
+});
+
+app.put('/associatedVideos', (req, res) => {
+  res.end("this is where you'll come to edit something");
+});
+
+app.delete('/associatedVideos', (req, res) => {
+  res.end("this is where you'll come to delete something!")
+});
 
 app.use('/', express.static(__dirname + '/../public/'));
 app.use('/client/dist/bundle.js', (express.static(__dirname + '/../client/dist/bundle.js')))
