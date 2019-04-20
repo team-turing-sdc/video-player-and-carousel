@@ -1,3 +1,5 @@
+const csvWriter = require('csv-write-stream');
+const writer = csvWriter();
 const faker = require('faker');
 const fs = require('fs');
 
@@ -41,38 +43,3 @@ let makeData = function() {
     movieData.push(movie);
   }
 };
-
-
-const makeDataFile = function () {
-  makeData();
-  makeData();
-  makeData();
-  makeData();
-  makeData();
-  makeData();
-  makeData();
-  makeData();
-  makeData();
-  makeData();
-
-  fs.writeFile(`movieData${fileCount}.json`, JSON.stringify(movieData), (err) => {
-    if (err) {
-      console.log(err);
-    }
-    console.log('movie data saved');
-  });
-  fileCount++;
-  movieData = [];
-};
-
-setTimeout(makeDataFile, 0);
-setTimeout(makeDataFile, 20000);
-setTimeout(makeDataFile, 40000);
-setTimeout(makeDataFile, 80000);
-setTimeout(makeDataFile, 100000);
-setTimeout(makeDataFile, 120000);
-setTimeout(makeDataFile, 140000);
-setTimeout(makeDataFile, 160000);
-setTimeout(makeDataFile, 180000);
-setTimeout(makeDataFile, 200000);
-
