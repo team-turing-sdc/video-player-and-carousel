@@ -323,16 +323,18 @@ let makeTitle = function() {
 };
 
 let getAssociatedVideos = function() {
-  return [{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]}];
+  return JSON.stringify([{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]}]);
 };
 
 let makeData = function() {
   console.time('timing seed');
-  writer.pipe(fs.createWriteStream('movieData.csv'))
+  writer.pipe(fs.createWriteStream('movieData.csv'));
+  let name = makeTitle();
+  let associatedVideos = getAssociatedVideos();
   for (let i = 0; i < 10000000; i++) {
     writer.write({
-      name: makeTitle(),
-      associatedVideos: getAssociatedVideos()
+      name,
+      associatedVideos
     });
   }
 
