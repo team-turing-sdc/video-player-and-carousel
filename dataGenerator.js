@@ -318,35 +318,27 @@ let titles = [
   "laboriosam"
 ];
 
-
-let makeData = function() {
-  for (let i = 0; i < 10000000; i++) {
-    writer.write({
-      name: `${titles[Math.floor(Math.random() * titles.length)]} ${titles[Math.floor(Math.random() * titles.length)]}`,
-      associatedVideos: [
-        {
-          title: `${titles[Math.floor(Math.random() * titles.length)]} ${titles[Math.floor(Math.random() * titles.length)]}`,
-          url: trailerLinks[Math.floor(Math.random() * movieData.length)]
-        },
-        {
-          title: `${titles[Math.floor(Math.random() * titles.length)]} ${titles[Math.floor(Math.random() * titles.length)]}`,
-          url: trailerLinks[Math.floor(Math.random() * movieData.length)]
-        },
-        {
-          title: `${titles[Math.floor(Math.random() * titles.length)]} ${titles[Math.floor(Math.random() * titles.length)]}`,
-          url: trailerLinks[Math.floor(Math.random() * movieData.length)]
-        },
-        {
-          title: `${titles[Math.floor(Math.random() * titles.length)]} ${titles[Math.floor(Math.random() * titles.length)]}`,
-          url: trailerLinks[Math.floor(Math.random() * movieData.length)]
-        },
-        {
-          title: `${titles[Math.floor(Math.random() * titles.length)]} ${titles[Math.floor(Math.random() * titles.length)]}`,
-          url: trailerLinks[Math.floor(Math.random() * movieData.length)]
-        }
-      ]
-    })
-  }
+let makeTitle = function() {
+  return `${titles[Math.floor(Math.random() * titles.length)]} ${titles[Math.floor(Math.random() * titles.length)]}`;
 };
 
+let getAssociatedVideos = function() {
+  return [{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]}];
+};
 
+let makeData = function() {
+  console.time('timing seed');
+  writer.pipe(fs.createWriteStream('movieData.csv'))
+  for (let i = 0; i < 10000000; i++) {
+    writer.write({
+      name: makeTitle(),
+      associatedVideos: getAssociatedVideos();
+    });
+  }
+
+  writer.end();
+  console.log('movie data saved');
+  console.timeEnd('timing seed');
+};
+
+makeData();
