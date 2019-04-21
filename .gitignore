@@ -25,3 +25,6 @@ build/
 dist/
 
 .aws.json
+
+# Movie Data
+movieData.csv
