@@ -1,6 +1,9 @@
 const csvWriter = require('csv-write-stream');
 const writer = csvWriter();
 const fs = require('fs');
+const faker = require('faker');
+
+let fileCount = 2;
 
 let trailerLinks = [
 'https://www.youtube.com/watch?v=Rp8WL621uGM',
@@ -104,243 +107,47 @@ let trailerLinks = [
 'https://www.youtube.com/watch?v=Z5RJUaFIKvE'
 ];
 
-let titles = [
-  "et",
-  "ab",
-  "omnis",
-  "magnam",
-  "facere",
-  "quos",
-  "praesentium",
-  "consequatur",
-  "aliquam",
-  "corrupti",
-  "exercitationem",
-  "vitae",
-  "eaque",
-  "dolores",
-  "veritatis",
-  "aut",
-  "illo",
-  "nam",
-  "quasi",
-  "consequuntur",
-  "possimus",
-  "necessitatibus",
-  "quibusdam",
-  "voluptates",
-  "magni",
-  "recusandae",
-  "nisi",
-  "in",
-  "nim",
-  "sint",
-  "nihil",
-  "corporis",
-  "rerum",
-  "tempora",
-  "nihil",
-  "nobis",
-  "eos",
-  "molestiae",
-  "similique",
-  "consequuntur",
-  "quam",
-  "quod",
-  "eos",
-  "labore",
-  "dolorem",
-  "rem",
-  "sedaut",
-  "dolores",
-  "exercitationem",
-  "dolorem",
-  "quiaratione",
-  "eveniet",
-  "harum",
-  "autem",
-  "dignissimos",
-  "eligendi",
-  "beatae",
-  "temporibus",
-  "amet",
-  "nam",
-  "beatae",
-  "illum",
-  "distinctio",
-  "occaecati",
-  "voluptas",
-  "praesentium",
-  "non",
-  "cumque",
-  "sunt",
-  "voluptatibus",
-  "placeat",
-  "sit",
-  "deserunt",
-  "aliquid",
-  "ut",
-  "nemo",
-  "voluptas",
-  "ipsam",
-  "nesciunt",
-  "veniam",
-  "ullam",
-  "nihil quia",
-  "corrupti ut",
-  "voluptate dolor",
-  "veritatis illo",
-  "qui sed",
-  "non sit",
-  "voluptate",
-  "magnam id",
-  "repellendus",
-  "sed",
-  "provident",
-  "omnis",
-  "harum a",
-  "laborum",
-  "fugiat",
-  "laborum",
-  "asperiores",
-  "incidunt",
-  "minima",
-  "fugit",
-  "dignissimos",
-  "deserunt",
-  "exercitationem",
-  "officiis",
-  "ut qui",
-  "nihil enim",
-  "ex illum",
-  "quo hic",
-  "nostrum vel",
-  "est in",
-  "omnis",
-  "ducimus",
-  "aspernatur",
-  "sunt",
-  "officiis",
-  "ut",
-  "nobis",
-  "hic aperiam",
-  "iure porro",
-  "et adipisci",
-  "quod et",
-  "incidunt sint",
-  "aut expedita",
-  "impedit",
-  "beatae",
-  "voluptatem",
-  "sed aut",
-  "nisi",
-  "repudiandae",
-  "eum hic",
-  "iure earum",
-  "occaecati",
-  "adipisci",
-  "sint",
-  "voluptas",
-  "aut",
-  "illo",
-  "quia qui",
-  "ipsa",
-  "magnam rem",
-  "aut rerum",
-  "aut id",
-  "inventore quasi",
-  "omnis animi",
-  "dolores dolor",
-  "deserunt",
-  "expedita",
-  "sunt maiores",
-  "fugit soluta",
-  "pariatur",
-  "quidem",
-  "neque nobis",
-  "quia",
-  "architecto",
-  "incidunt rerum",
-  "et magni",
-  "sint enim",
-  "quasi a",
-  "dolor aut",
-  "upiditate",
-  "sapiente",
-  "distinctio",
-  "qui",
-  "vero",
-  "magni",
-  "vitae",
-  "aut",
-  "porro",
-  "officiis et",
-  "quosut",
-  "repellat",
-  "vel odit",
-  "provident",
-  "ipsum",
-  "ab",
-  "facere ut",
-  "corporis",
-  "nam",
-  "quia fuga",
-  "debitis",
-  "omnis",
-  "quibusdam",
-  "laboriosam",
-  "voluptas",
-  "eligendi",
-  "nostrum",
-  "quia natus",
-  "quia et",
-  "est unde",
-  "voluptates",
-  "deleniti",
-  "dolor",
-  "quia",
-  "perferendis",
-  "beatae",
-  "sint",
-  "autem",
-  "in",
-  "nihil",
-  "soluta",
-  "et tempore",
-  "numquam et",
-  "laboriosam",
-  "possimus",
-  "vitae",
-  "iste",
-  "blanditiis",
-  "quia",
-  "explicabo",
-  "laboriosam"
-];
-
-let makeTitle = function() {
-  return `${titles[Math.floor(Math.random() * titles.length)]} ${titles[Math.floor(Math.random() * titles.length)]}`;
+let getAssociatedVideoTitle = function() {
+  return faker.lorem.words(2);
 };
 
-let getAssociatedVideos = function() {
-  return JSON.stringify([{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]},{title: makeTitle(),url: trailerLinks[Math.floor(Math.random() * trailerLinks.length)]}]);
+let getAssociatedVideoLink = function() {
+  return trailerLinks[Math.floor(Math.random() * trailerLinks.length)];
 };
 
 let makeData = function() {
-  console.time('timing seed');
+  console.time('timing data generation');
   writer.pipe(fs.createWriteStream('movieData.csv'));
-  let name = makeTitle();
-  let associatedVideos = getAssociatedVideos();
   for (let i = 0; i < 10000000; i++) {
+    let name = faker.lorem.words(2);
+    let associatedVideoTitle1 = getAssociatedVideoTitle();
+    let associatedVideoLink1 = getAssociatedVideoLink();
+    let associatedVideoTitle2 = getAssociatedVideoTitle();
+    let associatedVideoLink2 = getAssociatedVideoLink();
+    let associatedVideoTitle3 = getAssociatedVideoTitle();
+    let associatedVideoLink3 = getAssociatedVideoLink();
+    let associatedVideoTitle4 = getAssociatedVideoTitle();
+    let associatedVideoLink4 = getAssociatedVideoLink();
+    let associatedVideoTitle5 = getAssociatedVideoTitle();
+    let associatedVideoLink5 = getAssociatedVideoLink();
+
     writer.write({
       name,
-      associatedVideos
+      associatedVideoTitle1,
+      associatedVideoLink1,
+      associatedVideoTitle2,
+      associatedVideoLink2,
+      associatedVideoTitle3,
+      associatedVideoLink3,
+      associatedVideoTitle4,
+      associatedVideoLink4,
+      associatedVideoTitle5,
+      associatedVideoLink5
     });
   }
-
   writer.end();
   console.log('movie data saved');
-  console.timeEnd('timing seed');
+  console.timeEnd('timing data generation');
 };
 
 makeData();
