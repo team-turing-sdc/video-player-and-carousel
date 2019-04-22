@@ -1,4 +1,4 @@
-
+'/Users/derrickbrandon/Desktop/hrr37/sdc/video-player-and-carousel/movieData.csv'
 
 CREATE TABLE movieData(
   id SERIAL PRIMARY KEY,
