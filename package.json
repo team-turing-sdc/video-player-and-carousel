@@ -39,7 +39,6 @@
     "pg-promise": "^8.6.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "sequelize": "^5.7.4",
     "styled-components": "^4.2.0",
     "webpack": "^4.29.6"
   },
