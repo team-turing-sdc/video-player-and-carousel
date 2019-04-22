@@ -1,6 +1,4 @@
-'/Users/derrickbrandon/Desktop/hrr37/sdc/video-player-and-carousel/movieData.csv'
-
-CREATE TABLE movieData(
+CREATE TABLE IF NOT EXISTS movieData(
   id SERIAL PRIMARY KEY,
   name VARCHAR,
   associatedVideoTitle1 VARCHAR,
@@ -13,4 +11,4 @@ CREATE TABLE movieData(
   associatedVideoLink4 VARCHAR,
   associatedVideoTitle5 VARCHAR,
   associatedVideoLink5 VARCHAR
-  )
+)
