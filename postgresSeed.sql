@@ -1,3 +1,4 @@
+SELECT GETDATE();
 CREATE TABLE IF NOT EXISTS movieData(
   id SERIAL PRIMARY KEY,
   name VARCHAR,
@@ -12,3 +13,6 @@ CREATE TABLE IF NOT EXISTS movieData(
   associatedVideoTitle5 VARCHAR,
   associatedVideoLink5 VARCHAR
 );
+
+COPY movieData FROM '/Users/derrickbrandon/Desktop/hrr37/sdc/video-player-and-carousel/movieData.csv' WITH (FORMAT CSV, HEADER);
+SELECT GETDATE();
