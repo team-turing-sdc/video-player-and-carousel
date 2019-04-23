@@ -11,4 +11,4 @@ CREATE TABLE IF NOT EXISTS movieData(
   associatedVideoLink4 VARCHAR,
   associatedVideoTitle5 VARCHAR,
   associatedVideoLink5 VARCHAR
-)
+);
