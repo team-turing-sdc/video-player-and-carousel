@@ -3,8 +3,6 @@ const writer = csvWriter();
 const fs = require('fs');
 const faker = require('faker');
 
-let fileCount = 2;
-
 let trailerLinks = [
 'https://www.youtube.com/watch?v=Rp8WL621uGM',
 'https://www.youtube.com/watch?v=WKWFr9upIuU&t=15s',
