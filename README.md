@@ -11,3 +11,6 @@
 | add movie name and associated videos to database                | POST         | /associatedVideos | {name: 'Shrek', associatedVideos:[{title: '...', url: '...'}, ...]}   | add movie and associated videos to database                     | {name: Shrek, associatedVideos:[{title: '...', url: '...'}, ...]}                                                                       |
 | edit specified movie name and associated videos in database     | PUT          | /associatedVideos | {name: 'Shrek', associatedVideos:[{title: '...', url: '...'}, ...]}   | update specified movie or associated videos in database         | {name: 'Shrek 2', associatedVideos:[{title: '...', url: '...'}, ...]}                                                                   |
 | remove specified movie name and associated videos from database | DELETE       | /associatedVideos | {name: 'Shrek 2', associatedVideos:[{title: '...', url: '...'}, ...]} | delete specified movie name and associated videos from database | {name: 'Shrek 2', associatedVideos:[{title: '...', url: '...'}, ...]}                                                                   |
+
+
+WHEN USING POSTGRES, CREATE A DATABASE WITH THE NAME 'movieData' BEFORE RUNNING THE POSTGRES SEED SCRIPT
