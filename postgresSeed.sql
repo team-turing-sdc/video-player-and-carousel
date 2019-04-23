@@ -1,3 +1,4 @@
+\timing ON
 CREATE TABLE IF NOT EXISTS movieData(
   id SERIAL PRIMARY KEY,
   name text,
@@ -14,3 +15,4 @@ CREATE TABLE IF NOT EXISTS movieData(
 );
 
 COPY movieData FROM '/Users/derrickbrandon/Desktop/hrr37/sdc/video-player-and-carousel/movieData.csv' WITH (FORMAT CSV, Header);
+\timing OFF
