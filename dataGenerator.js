@@ -117,6 +117,7 @@ let makeData = function() {
   console.time('timing data generation');
   writer.pipe(fs.createWriteStream('movieData.csv'));
   for (let i = 0; i < 10000000; i++) {
+    let id = i;
     let name = faker.lorem.words(2);
     let associatedVideoTitle1 = getAssociatedVideoTitle();
     let associatedVideoLink1 = getAssociatedVideoLink();
@@ -130,6 +131,7 @@ let makeData = function() {
     let associatedVideoLink5 = getAssociatedVideoLink();
 
     writer.write({
+      id,
       name,
       associatedVideoTitle1,
       associatedVideoLink1,

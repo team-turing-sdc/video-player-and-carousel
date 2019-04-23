@@ -1,16 +1,16 @@
 CREATE TABLE IF NOT EXISTS movieData(
   id SERIAL PRIMARY KEY,
-  name VARCHAR,
-  associatedVideoTitle1 VARCHAR,
-  associatedVideoLink1 VARCHAR,
-  associatedVideoTitle2 VARCHAR,
-  associatedVideoLink2 VARCHAR,
-  associatedVideoTitle3 VARCHAR,
-  associatedVideoLink3 VARCHAR,
-  associatedVideoTitle4 VARCHAR,
-  associatedVideoLink4 VARCHAR,
-  associatedVideoTitle5 VARCHAR,
-  associatedVideoLink5 VARCHAR
+  name text,
+  associatedVideoTitle1 text,
+  associatedVideoLink1 text,
+  associatedVideoTitle2 text,
+  associatedVideoLink2 text,
+  associatedVideoTitle3 text,
+  associatedVideoLink3 text,
+  associatedVideoTitle4 text,
+  associatedVideoLink4 text,
+  associatedVideoTitle5 text,
+  associatedVideoLink5 text
 );
 
-COPY movieData FROM '/Users/derrickbrandon/Desktop/hrr37/sdc/video-player-and-carousel/movieData.csv' WITH (FORMAT CSV, HEADER);
+COPY movieData FROM '/Users/derrickbrandon/Desktop/hrr37/sdc/video-player-and-carousel/movieData.csv' WITH (FORMAT CSV, Header);
