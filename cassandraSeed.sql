@@ -23,4 +23,4 @@ associatedVideoTitle5 text,
 associatedVideoLink5 text
 );
 
-COPY movieData.movieData (id, name, associatedVideoTitle1, associatedVideoLink1, associatedVideoTitle2, associatedVideoLink2, associatedVideoTitle3, associatedVideoLink3, associatedVideoTitle4, associatedVideoLink4, associatedVideoTitle5, associatedVideoLink5) FROM ‘/Users/derrickbrandon/Desktop/hrr37/sdc/video-player-and-carousel/movieData.csv’ WITH HEADER = TRUE AND DELIMITER = ’,’ ;
+COPY movieData.movieData (id, name, associatedVideoTitle1, associatedVideoLink1, associatedVideoTitle2, associatedVideoLink2, associatedVideoTitle3, associatedVideoLink3, associatedVideoTitle4, associatedVideoLink4, associatedVideoTitle5, associatedVideoLink5) FROM '/Users/derrickbrandon/Desktop/hrr37/sdc/video-player-and-carousel/movieData.csv' WITH HEADER = TRUE AND DELIMITER = ',' ;
