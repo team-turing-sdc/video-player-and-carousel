@@ -1,1 +1,1 @@
-SELECT * FROM movieData WHERE id=9999999;
+SELECT * FROM movieData.movieData WHERE id=9999999;
