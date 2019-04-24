@@ -13,4 +13,6 @@
 | remove specified movie name and associated videos from database | DELETE       | /associatedVideos | {name: 'Shrek 2', associatedVideos:[{title: '...', url: '...'}, ...]} | delete specified movie name and associated videos from database | {name: 'Shrek 2', associatedVideos:[{title: '...', url: '...'}, ...]}                                                                   |
 
 
-WHEN USING POSTGRES, CREATE A DATABASE WITH THE NAME 'movieData' BEFORE RUNNING THE POSTGRES SEED SCRIPT
+WHEN USING POSTGRES, CREATE A DATABASE WITH THE NAME 'movieData' BEFORE RUNNING THE POSTGRES SEED SCRIPT.
+
+WHEN USING CASSANDRA, MAKE SURE YOU HAVE JDK 8 VERSION OF JAVA AND CASSANDRA INSTALLED
