@@ -12,10 +12,12 @@
     "react-dev": "webpack -d --watch",
     "generate-data": "node --max-old-space-size=8192 dataGenerator.js",
     "postgres-seed": "psql -d movieData -f postgresSeed.sql;",
-    "seed-db": "mongoimport --db fandangit --collection movies --drop --file mock_movie_data.json --jsonArray",
-    "cassandra-seed": "cqlsh --file 'cassandraSeed.sql'"
+    "postgres-test-query": "psql -d movieData -f postgresQuery.sql;",
+    "cassandra-seed": "cqlsh --file 'cassandraSeed.sql'",
+    "cassandra-test-query": "cqlsh --file 'cassandraQuery.sql'",
     "server-dev": "nodemon server/index.js",
     "start": "node server/index.js",
+    "seed-db": "mongoimport --db fandangit --collection movies --drop --file mock_movie_data.json --jsonArray",
     "test": "jest --coverage"
   },
   "dependencies": {
