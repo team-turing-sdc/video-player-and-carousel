@@ -1,10 +1,18 @@
-const movieSchema = mongoose.Schema({
-  id: Number,
-  name: String,
-  associatedVideos: Array
-})
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('movieData', 'derrickbrandon', '',{
+  host: 'localhost',
+  dialect:'postgres'
+});
 
-let Movie = mongoose.model('Movie', movieSchema)
+// verify that there's a connection to the postgres database
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+});
 
 let getMovieData = (id, callback) => {
   let query = Movie.find({id: id});
