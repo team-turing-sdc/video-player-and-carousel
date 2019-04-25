@@ -1,6 +1,3 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/fandangit', {useNewUrlParser: true})
-
 const movieSchema = mongoose.Schema({
   id: Number,
   name: String,
