@@ -59,21 +59,6 @@ Movie.init({
   modelName: 'user'
 });
 
-
-// let getMovieData = (id, callback) => {
-//   let query = Movie.find({id: id});
-
-//   query.exec((err, docs) => {
-//     if (err) {
-//       console.log('error querying mongodb: ', err);
-//       callback(err, null);
-//     } else {
-//       console.log('mongodb query successful!');
-//       callback(null, docs);
-//     }
-//   })
-// }
-
 let getMovieData = (id, callback) => {
   let query = `SELECT * FROM moviedata WHERE id=${id}`;
   sequelize.query(query).then(movie => {
