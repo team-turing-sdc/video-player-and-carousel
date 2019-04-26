@@ -93,6 +93,7 @@ let updateMovie = (id, column, value) => {
 module.exports = {
   getMovieData: getMovieData,
   deleteMovie: deleteMovie,
-  addMovie: addMovie
+  addMovie: addMovie,
+  updateMovie: updateMovie
 }
 
