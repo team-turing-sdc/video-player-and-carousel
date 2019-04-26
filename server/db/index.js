@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const Model = Sequelize.Model;
 const sequelize = new Sequelize('movieData', 'derrickbrandon', '',{
   host: 'localhost',
   dialect:'postgres'
@@ -14,6 +15,7 @@ sequelize
     console.error('Unable to connect to the database:', err);
 });
 
+
 let getMovieData = (id, callback) => {
   let query = Movie.find({id: id});
 
@@ -26,6 +28,10 @@ let getMovieData = (id, callback) => {
       callback(null, docs);
     }
   })
+}
+
+let getMovieData = (id, callback) => {
+
 }
 
 module.exports.getMovieData = getMovieData;
