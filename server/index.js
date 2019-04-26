@@ -29,15 +29,15 @@ app.get('/associatedVideos/:id', (req, res) => {
   })
 });
 
-app.post('/associatedVideos', (req, res) => {
+app.post('/associatedVideos/:id', (req, res) => {
   res.end("this is where you'll come to add something!");
 });
 
-app.put('/associatedVideos', (req, res) => {
+app.put('/associatedVideos/:id', (req, res) => {
   res.end("this is where you'll come to edit something");
 });
 
-app.delete('/associatedVideos', (req, res) => {
+app.delete('/associatedVideos/:id', (req, res) => {
   res.end("this is where you'll come to delete something!")
 });
 
