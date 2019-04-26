@@ -26,7 +26,7 @@ app.get('/associatedVideos/:id', (req, res) => {
       res.statusCode = 200;
       res.json(results);
     }
-  })
+  });
 });
 
 app.post('/associatedVideos/:id', (req, res) => {
@@ -38,7 +38,17 @@ app.put('/associatedVideos/:id', (req, res) => {
 });
 
 app.delete('/associatedVideos/:id', (req, res) => {
-  res.end("this is where you'll come to delete something!")
+  let id = req.params.id;
+  db.deleteMovie(id, (err, results) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      console.log('db deletion successful! results: ', results);
+      res.statusCode = 200;
+      res.json(results);
+    }
+  })
 });
 
 app.use('/', express.static(__dirname + '/../public/'));
