@@ -14,8 +14,8 @@ app.use((req, res, next) => {
   next();
 })
 
-app.get('/associatedVideos', (req, res) => {
-  let id = req.query.movieID;
+app.get('/associatedVideos/:id', (req, res) => {
+  let id = req.params.id;
 
   db.getMovieData(id, (err, results) => {
     if (err) {
