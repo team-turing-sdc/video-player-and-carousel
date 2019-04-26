@@ -82,6 +82,14 @@ let addMovie = (id, name, associatedVideoTitle1, associatedVideoTitle2, associat
   }).catch(err => err ? callback(err) : callback(null));
 }
 
+let updateMovie = (id, column, value) => {
+  let query = `UPDATE moviedata SET ${column} = ${value} WHERE id = ${id}`;
+
+  sequelize.query(query).then(movie => {
+    callback(null, movie);
+  }).catch(err => err ? callback(err) : callback(null));
+}
+
 module.exports = {
   getMovieData: getMovieData,
   deleteMovie: deleteMovie,
