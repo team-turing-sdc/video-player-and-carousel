@@ -66,5 +66,13 @@ let getMovieData = (id, callback) => {
   }).catch(err => err ? callback(err) : callback(null));
 };
 
+let deleteMovie = (id, callback) => {
+  let query = `DELETE FROM moviedata WHERE id=${id}`;
+
+  sequelize.query(query).then(movie => {
+    callback(null, movie);
+  }).catch(err => err ? callback(err) : callback(null));
+}
+
 module.exports.getMovieData = getMovieData;
 
