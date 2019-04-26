@@ -56,7 +56,20 @@ app.post('/associatedVideos/:id', (req, res) => {
 });
 
 app.put('/associatedVideos/:id', (req, res) => {
-  res.end("this is where you'll come to edit something");
+  let id = req.params.id;
+  let column = req.body.column;
+  let value = req.body.value;
+
+  db.updateMovie(id, column, value, (err, results) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      console.log('db update successful! results: ', results);
+      res.statusCode = 200;
+      res.json(results);
+    }
+  });
 });
 
 app.delete('/associatedVideos/:id', (req, res) => {
