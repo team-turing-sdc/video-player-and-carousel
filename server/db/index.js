@@ -74,5 +74,8 @@ let deleteMovie = (id, callback) => {
   }).catch(err => err ? callback(err) : callback(null));
 }
 
-module.exports.getMovieData = getMovieData;
+module.exports = {
+  getMovieData: getMovieData,
+  deleteMovie: deleteMovie
+}
 
