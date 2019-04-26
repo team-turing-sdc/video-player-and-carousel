@@ -74,8 +74,17 @@ let deleteMovie = (id, callback) => {
   }).catch(err => err ? callback(err) : callback(null));
 }
 
+let addMovie = (id, name, associatedVideoTitle1, associatedVideoTitle2, associatedVideoTitle3,associatedVideoTitle4,associatedVideoTitle5, associatedVideoLink1, associatedVideoLink2, associatedVideoLink3, associatedVideoLink4,associatedVideoLink5) => {
+  let query = `INSERT INTO moviedata (id, name, associatedVideoTitle1, associatedVideoLink1, associatedVideoTitle2, associatedVideoLink2, associatedVideoTitle3, associatedVideoLink3, associatedVideoTitle4, associatedVideoLink4, associatedVideoTitle5, associatedVideoLink5) VALUES(${id}, ${name}, ${associatedVideoTitle1}, ${associatedVideoLink1}, ${associatedVideoTitle2}, ${associatedVideoLink2}, ${associatedVideoTitle3}, ${associatedVideoLink3}, ${associatedVideoTitle4}, ${associatedVideoLink4}, ${associatedVideoTitle5}, ${associatedVideoLink5})`;
+
+  sequelize.query(query).then(movie => {
+    callback(null, movie);
+  }).catch(err => err ? callback(err) : callback(null));
+}
+
 module.exports = {
   getMovieData: getMovieData,
-  deleteMovie: deleteMovie
+  deleteMovie: deleteMovie,
+  addMovie: addMovie
 }
 
