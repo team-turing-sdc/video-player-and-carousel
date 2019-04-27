@@ -16,7 +16,7 @@
     "cassandra-seed": "cqlsh --file 'cassandraSeed.sql'",
     "cassandra-test-query": "cqlsh --file 'cassandraQuery.sql'",
     "server-dev": "nodemon server/index.js",
-    "start": "node server/index.js",
+    "start": "nodemon server/index.js",
     "test": "jest --coverage"
   },
   "dependencies": {
@@ -37,11 +37,12 @@
     "grunt-aws": "^0.7.1",
     "grunt-contrib-connect": "^2.0.0",
     "jest": "^24.5.0",
-    "mongodb": "^3.2.2",
-    "mongoose": "^5.4.20",
+    "newrelic": "^5.7.0",
     "pg": "^7.10.0",
+    "pg-hstore": "^2.3.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "sequelize": "^5.7.5",
     "styled-components": "^4.2.0",
     "webpack": "^4.29.6"
   },

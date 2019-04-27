@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const app = (express());
 const PORT = 3333;
@@ -14,8 +15,8 @@ app.use((req, res, next) => {
   next();
 })
 
-app.get('/associatedVideos', (req, res) => {
-  let id = req.query.movieID;
+app.get('/associatedVideos/:id', (req, res) => {
+  let id = req.params.id;
 
   db.getMovieData(id, (err, results) => {
     if (err) {
@@ -26,19 +27,64 @@ app.get('/associatedVideos', (req, res) => {
       res.statusCode = 200;
       res.json(results);
     }
+  });
+});
+
+app.post('/associatedVideos/:id', (req, res) => {
+  let id = req.body.id;
+  let name = req.body.name;
+  let associatedVideoTitle1 = req.body.associatedVideoTitle1;
+  let associatedVideoTitle2 = req.body.associatedVideoTitle2;
+  let associatedVideoTitle3 = req.body.associatedVideoTitle3;
+  let associatedVideoTitle4 = req.body.associatedVideoTitle4;
+  let associatedVideoTitle5 = req.body.associatedVideoTitle5;
+  let associatedVideoLink1 = req.body.associatedVideoLink1;
+  let associatedVideoLink2 = req.body.associatedVideoLink2;
+  let associatedVideoLink3 = req.body.associatedVideoLink3;
+  let associatedVideoLink4 = req.body.associatedVideoLink4;
+  let associatedVideoLink5 = req.body.associatedVideoLink5;
+
+  db.addMovie(id, name, associatedVideoTitle1, associatedVideoTitle2, associatedVideoTitle3,associatedVideoTitle4,associatedVideoTitle5, associatedVideoLink1, associatedVideoLink2, associatedVideoLink3, associatedVideoLink4,associatedVideoLink5, (err, results) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      console.log('db post successful! results: ', results);
+      res.statusCode = 200;
+      res.json(results);
+    }
+  });
+});
+
+app.put('/associatedVideos/:id', (req, res) => {
+  let id = req.params.id;
+  let column = req.body.column;
+  let value = req.body.value;
+
+  db.updateMovie(id, column, value, (err, results) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      console.log('db update successful! results: ', results);
+      res.statusCode = 200;
+      res.json(results);
+    }
+  });
+});
+
+app.delete('/associatedVideos/:id', (req, res) => {
+  let id = req.params.id;
+  db.deleteMovie(id, (err, results) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      console.log('db deletion successful! results: ', results);
+      res.statusCode = 200;
+      res.json(results);
+    }
   })
-});
-
-app.post('/associatedVideos', (req, res) => {
-  res.end("this is where you'll come to add something!");
-});
-
-app.put('/associatedVideos', (req, res) => {
-  res.end("this is where you'll come to edit something");
-});
-
-app.delete('/associatedVideos', (req, res) => {
-  res.end("this is where you'll come to delete something!")
 });
 
 app.use('/', express.static(__dirname + '/../public/'));

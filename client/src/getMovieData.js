@@ -1,6 +1,6 @@
-const getMovieData = async (id  = 1) => {
+const getMovieData = async (id  = 10000000) => {
   try {
-    const response = await fetch(`http://localhost:3333/associatedVideos?movieID=${id}`, {
+    const response = await fetch(`http://localhost:3333/associatedVideos/${id}`, {
       method: "GET",
       headers: {
         "Content-Type":"application/json",
@@ -9,8 +9,35 @@ const getMovieData = async (id  = 1) => {
     })
 
     const movieData = await response.json();
-    console.log(`movie data: `, movieData[0]);
-    return movieData[0];
+    console.log(`movie data: `, movieData);
+    const resultObject = movieData[0][0];
+    const result = {
+      id: resultObject.id,
+      name: resultObject.name,
+      associatedVideos: [
+        {
+          title: resultObject.associatedvideotitle1,
+          url: resultObject.associatedvideolink1
+        },
+        {
+          title: resultObject.associatedvideotitle2,
+          url: resultObject.associatedvideolink2
+        },
+        {
+          title: resultObject.associatedvideotitle3,
+          url: resultObject.associatedvideolink3
+        },
+        {
+          title: resultObject.associatedvideotitle4,
+          url: resultObject.associatedvideolink4
+        },
+        {
+          title: resultObject.associatedvideotitle5,
+          url: resultObject.associatedvideolink5
+        }
+      ]
+    }
+    return result;
   } catch (err) {
     console.log(`WARNING ERROR LOOK OUT: `, err);
   }
