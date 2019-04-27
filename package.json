@@ -37,6 +37,7 @@
     "grunt-aws": "^0.7.1",
     "grunt-contrib-connect": "^2.0.0",
     "jest": "^24.5.0",
+    "newrelic": "^5.7.0",
     "pg": "^7.10.0",
     "pg-hstore": "^2.3.2",
     "react": "^16.8.6",
