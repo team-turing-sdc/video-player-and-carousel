@@ -28,3 +28,6 @@ dist/
 
 # Movie Data
 movieData.csv
+
+#new relic
+newrelic.js
