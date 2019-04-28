@@ -2,11 +2,11 @@ config:
   target: 'http://localhost:3333'
   phases:
     - duration: 10
-      arrivalRate: 100
+      arrivalRate: 1
   defaults:
     headers:
       x-my-service-auth: '987401838271002188298567'
 scenarios:
   - flow:
     - get:
-        url: "/10000000"
+        url: "/associatedVideos/{{ id }}"
