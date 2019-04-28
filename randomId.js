@@ -7,12 +7,13 @@ function generateRandomGetId(userContext, events, done) {
 }
 
 function generateRandomPostId(userContext, events, done) {
-  postId++;
   userContext.vars.postId = postId;
+  postId++;
   return done();
 }
 
 
 module.exports = {
-  generateRandomGetId
+  generateRandomGetId,
+  generateRandomPostId
 }
