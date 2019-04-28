@@ -1,12 +1,12 @@
 config:
   target: 'http://localhost:3333'
-  processor: "./randomId.js"
   phases:
     - duration: 10
       arrivalRate: 1
   defaults:
     headers:
       x-my-service-auth: '987401838271002188298567'
+  processor: "./randomId.js"
 scenarios:
   - flow:
     - function: "generateRandomGetId"
