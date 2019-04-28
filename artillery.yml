@@ -9,5 +9,6 @@ config:
       x-my-service-auth: '987401838271002188298567'
 scenarios:
   - flow:
+    - function: "generateRandomGetId"
     - get:
-        url: "/associatedVideos/{{ id }}"
+        url: "/associatedVideos/{{ getId }}"
