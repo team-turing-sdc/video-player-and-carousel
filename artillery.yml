@@ -23,15 +23,15 @@ scenarios:
   - flow:
     - function: "generateRandomGetId"
     - get:
-        url: "/associatedVideos/{{ getId }}"
+        url: "/associatedVideos/{{getId}}"
   - name: "post request with incrementing id"
-  - weight: 3
+  - weight: 2
   - flow:
     - function: "generateRandomPostId"
     - post:
-        url: "/associatedVideos/{{ postId }}"
+        url: "/associatedVideos/{{postId}}"
         json:
-          id: "{{ postId }}"
+          id: "{{postId}}"
           name: "test"
           associatedVideoTitle1: "test"
           associatedVideoTitle2: "test"
