@@ -31,15 +31,15 @@ scenarios:
     - post:
         url: "/associatedVideos/{{ postId }}"
         json:
-          id: "{{ postId }}",
-          name: "test",
-          associatedVideoTitle1: "test",
-          associatedVideoTitle2: "test",
-          associatedVideoTitle3: "test",
-          associatedVideoTitle4: "test",
-          associatedVideoTitle5: "test",
-          associatedVideoLink1: "test",
-          associatedVideoLink2: "test",
-          associatedVideoLink3: "test",
-          associatedVideoLink4: "test",
+          id: "{{ postId }}"
+          name: "test"
+          associatedVideoTitle1: "test"
+          associatedVideoTitle2: "test"
+          associatedVideoTitle3: "test"
+          associatedVideoTitle4: "test"
+          associatedVideoTitle5: "test"
+          associatedVideoLink1: "test"
+          associatedVideoLink2: "test"
+          associatedVideoLink3: "test"
+          associatedVideoLink4: "test"
           associatedVideoLink5: "test"
