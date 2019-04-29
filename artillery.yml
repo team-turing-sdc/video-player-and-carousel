@@ -13,25 +13,22 @@ config:
     - duration: 60
       arrivalRate: 100
       rampTo: 1000
-  defaults:
-    headers:
-      x-my-service-auth: '987401838271002188298567'
   processor: "./randomId.js"
 scenarios:
   - name: "get requests with random id between 9999000 and 10000000"
-  - weight: 5
-  - flow:
+    weight: 5
+    flow:
     - function: "generateRandomGetId"
     - get:
-        url: "/associatedVideos/{{getId}}"
+        url: "/associatedVideos/{{ getId }}"
   - name: "post request with incrementing id"
-  - weight: 2
-  - flow:
+    weight: 2
+    flow:
     - function: "generateRandomPostId"
     - post:
-        url: "/associatedVideos/{{postId}}"
+        url: "/associatedVideos/{{ postId }}"
         json:
-          id: "{{postId}}"
+          id: "{{ postId }}"
           name: "test"
           associatedVideoTitle1: "test"
           associatedVideoTitle2: "test"
