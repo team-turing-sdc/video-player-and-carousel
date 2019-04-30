@@ -53,7 +53,7 @@ class Synopsis extends React.Component {
       }
     })
     .then((response) => {
-      return response.json();
+      return response;
     })
     .then((data) => {
       let videoData = data[0];
