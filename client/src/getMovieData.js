@@ -1,6 +1,6 @@
 const getMovieData = async (id  = 10000000) => {
   try {
-    const response = await fetch(`http://localhost:3333/associatedVideos/${id}`, {
+    const response = await fetch(`18.217.213.55:3333/associatedVideos/${id}`, {
       method: "GET",
       headers: {
         "Content-Type":"application/json",
