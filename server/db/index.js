@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const Model = Sequelize.Model;
-const sequelize = new Sequelize('movieData', 'derrickbrandon', '',{
+const sequelize = new Sequelize('movieData', 'other', '24uhh%!?',{
   host: '18.217.213.55',
   dialect:'postgres'
 });
